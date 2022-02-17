@@ -1,0 +1,20 @@
+﻿@page
+@model DatabaseImplementatie.Pages.Toevoegen
+
+@{
+    ViewData["Title"] = "Toevoegen";
+}
+
+<form method="post">
+    ISBN:
+    <input type="number" name="isbn"/><br/>
+    Lengte:
+    <input type="number" name="lengte"/><br/>
+    Breedte:
+    <input type="number" name="breedte"/><br/>
+    Dikte:
+    <input type="number" name="dikte"/><br/>
+    Hoogte:
+    <input type="number" name="hoogte"/><br/>
+    <button type="submit" asp-page-handler="Submit">Toevoegen</button>
+</form>

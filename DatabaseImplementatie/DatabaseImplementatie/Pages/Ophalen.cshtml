@@ -1,0 +1,20 @@
+﻿@page
+@model DatabaseImplementatie.Pages.Ophalen
+
+@{
+    ViewData["Title"] = "Ophalen";
+}
+
+<form>
+    <button type="submit">Ophalen</button>
+</form>
+<ul>
+    @foreach (var afmetingen in Model.Resultaat)
+    {
+        <li>@afmetingen.isbn
+            -- @afmetingen.lengte
+            -- @afmetingen.breedte
+            -- @afmetingen.dikte
+            -- @afmetingen.hoogte</li>
+    }
+</ul>
