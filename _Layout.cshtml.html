@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>_Layout.cshtml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c191ff;}
+.s1 { color: #d0d0d0;}
+.s2 { color: #85c46c;}
+.s3 { color: #c9a26d;}
+.s4 { color: #e1bfff;}
+.s5 { color: #d0d0d0;}
+.s6 { color: #bdbdbd;}
+.s7 { color: #ffd49e;}
+.s8 { color: #6c95eb;}
+</style>
+</head>
+<body bgcolor="#262626">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+_Layout.cshtml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;utf-8&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s2">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s4">@</span><span class="s5">ViewData</span><span class="s6">[</span><span class="s3">&quot;Title&quot;</span><span class="s6">] - DatabaseImplementatie</span><span class="s0">&lt;/title&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">href</span><span class="s3">=&quot;~/lib/bootstrap/dist/css/bootstrap.min.css&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">href</span><span class="s3">=&quot;~/css/site.css&quot; </span><span class="s2">asp-append-version</span><span class="s3">=&quot;true&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">href</span><span class="s3">=&quot;~/DatabaseImplementatie.styles.css&quot; </span><span class="s2">asp-append-version</span><span class="s3">=&quot;true&quot;</span><span class="s0">/&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+<span class="s0">&lt;header&gt;</span>
+    <span class="s0">&lt;nav </span><span class="s2">class</span><span class="s3">=&quot;navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;a </span><span class="s2">class</span><span class="s3">=&quot;navbar-brand&quot; </span><span class="s2">asp-area</span><span class="s3">=&quot;&quot; </span><span class="s2">asp-page</span><span class="s3">=&quot;/Index&quot;</span><span class="s0">&gt;</span><span class="s6">DatabaseImplementatie</span><span class="s0">&lt;/a&gt;</span>
+            <span class="s0">&lt;button </span><span class="s2">class</span><span class="s3">=&quot;navbar-toggler&quot; </span><span class="s2">type</span><span class="s3">=&quot;button&quot; </span><span class="s2">data-bs-toggle</span><span class="s3">=&quot;collapse&quot; </span><span class="s2">data-bs-target</span><span class="s3">=&quot;.navbar-collapse&quot; </span><span class="s2">aria-controls</span><span class="s3">=&quot;navbarSupportedContent&quot;</span>
+                    <span class="s2">aria-expanded</span><span class="s3">=&quot;false&quot; </span><span class="s2">aria-label</span><span class="s3">=&quot;Toggle navigation&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;navbar-toggler-icon&quot;</span><span class="s0">&gt;&lt;/span&gt;</span>
+            <span class="s0">&lt;/button&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;navbar-collapse collapse d-sm-inline-flex justify-content-between&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">class</span><span class="s3">=&quot;navbar-nav flex-grow-1&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;li </span><span class="s2">class</span><span class="s3">=&quot;nav-item&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;a </span><span class="s2">class</span><span class="s3">=&quot;nav-link text-dark&quot; </span><span class="s2">asp-area</span><span class="s3">=&quot;&quot; </span><span class="s2">asp-page</span><span class="s3">=&quot;/Index&quot;</span><span class="s0">&gt;</span><span class="s6">Home</span><span class="s0">&lt;/a&gt;</span>
+                    <span class="s0">&lt;/li&gt;</span>
+                    <span class="s0">&lt;li </span><span class="s2">class</span><span class="s3">=&quot;nav-item&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;a </span><span class="s2">class</span><span class="s3">=&quot;nav-link text-dark&quot; </span><span class="s2">asp-area</span><span class="s3">=&quot;&quot; </span><span class="s2">asp-page</span><span class="s3">=&quot;/Privacy&quot;</span><span class="s0">&gt;</span><span class="s6">Privacy</span><span class="s0">&lt;/a&gt;</span>
+                    <span class="s0">&lt;/li&gt;</span>
+                    <span class="s0">&lt;li </span><span class="s2">class</span><span class="s3">=&quot;nav-item&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;a </span><span class="s2">class</span><span class="s3">=&quot;nav-link text-dark&quot; </span><span class="s2">asp-area</span><span class="s3">=&quot;&quot; </span><span class="s2">asp-page</span><span class="s3">=&quot;/Ophalen&quot;</span><span class="s0">&gt;</span><span class="s6">Ophalen</span><span class="s0">&lt;/a&gt;</span>
+                    <span class="s0">&lt;/li&gt;</span>
+                    <span class="s0">&lt;li </span><span class="s2">class</span><span class="s3">=&quot;nav-item&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;a </span><span class="s2">class</span><span class="s3">=&quot;nav-link text-dark&quot; </span><span class="s2">asp-area</span><span class="s3">=&quot;&quot; </span><span class="s2">asp-page</span><span class="s3">=&quot;/Toevoegen&quot;</span><span class="s0">&gt;</span><span class="s6">Toevoegen</span><span class="s0">&lt;/a&gt;</span>
+                    <span class="s0">&lt;/li&gt;</span>
+                    
+                <span class="s0">&lt;/ul&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/nav&gt;</span>
+<span class="s0">&lt;/header&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;main </span><span class="s2">role</span><span class="s3">=&quot;main&quot; </span><span class="s2">class</span><span class="s3">=&quot;pb-3&quot;</span><span class="s0">&gt;</span>
+        <span class="s4">@</span><span class="s5">RenderBody</span><span class="s6">()</span>
+    <span class="s0">&lt;/main&gt;</span>
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;footer </span><span class="s2">class</span><span class="s3">=&quot;border-top footer text-muted&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot;</span><span class="s0">&gt;</span>
+        <span class="s7">&amp;copy; </span><span class="s6">2022 - DatabaseImplementatie - </span><span class="s0">&lt;a </span><span class="s2">asp-area</span><span class="s3">=&quot;&quot; </span><span class="s2">asp-page</span><span class="s3">=&quot;/Privacy&quot;</span><span class="s0">&gt;</span><span class="s6">Privacy</span><span class="s0">&lt;/a&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/footer&gt;</span>
+
+<span class="s0">&lt;script </span><span class="s2">src</span><span class="s3">=&quot;~/lib/jquery/dist/jquery.min.js&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+<span class="s0">&lt;script </span><span class="s2">src</span><span class="s3">=&quot;~/lib/bootstrap/dist/js/bootstrap.bundle.min.js&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+<span class="s0">&lt;script </span><span class="s2">src</span><span class="s3">=&quot;~/js/site.js&quot; </span><span class="s2">asp-append-version</span><span class="s3">=&quot;true&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+
+<span class="s4">@</span><span class="s5">await RenderSectionAsync</span><span class="s6">(</span><span class="s3">&quot;Scripts&quot;</span><span class="s6">, </span><span class="s5">required: </span><span class="s8">false</span><span class="s6">)</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>

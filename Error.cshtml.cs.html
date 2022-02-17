@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Error.cshtml.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #6c95eb;}
+.s1 { color: #d0d0d0;}
+.s2 { color: #bdbdbd;}
+.s3 { color: #ed94c0;}
+</style>
+</head>
+<body bgcolor="#262626">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Error.cshtml.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System</span><span class="s2">.</span><span class="s1">Diagnostics</span><span class="s2">;</span>
+<span class="s0">using </span><span class="s1">Microsoft</span><span class="s2">.</span><span class="s1">AspNetCore</span><span class="s2">.</span><span class="s1">Mvc</span><span class="s2">;</span>
+<span class="s0">using </span><span class="s1">Microsoft</span><span class="s2">.</span><span class="s1">AspNetCore</span><span class="s2">.</span><span class="s1">Mvc</span><span class="s2">.</span><span class="s1">RazorPages</span><span class="s2">;</span>
+
+<span class="s0">namespace </span><span class="s1">DatabaseImplementatie</span><span class="s2">.</span><span class="s1">Pages</span><span class="s2">;</span>
+
+<span class="s2">[</span><span class="s1">ResponseCache</span><span class="s2">(</span><span class="s1">Duration </span><span class="s2">= </span><span class="s3">0</span><span class="s2">, </span><span class="s1">Location </span><span class="s2">= </span><span class="s1">ResponseCacheLocation</span><span class="s2">.</span><span class="s1">None</span><span class="s2">, </span><span class="s1">NoStore </span><span class="s2">= </span><span class="s0">true</span><span class="s2">)]</span>
+<span class="s2">[</span><span class="s1">IgnoreAntiforgeryToken</span><span class="s2">]</span>
+<span class="s0">public class </span><span class="s1">ErrorModel : PageModel</span>
+<span class="s2">{</span>
+    <span class="s0">public string</span><span class="s1">? RequestId </span><span class="s2">{ </span><span class="s1">get</span><span class="s2">; </span><span class="s1">set</span><span class="s2">; }</span>
+
+    <span class="s0">public bool </span><span class="s1">ShowRequestId =&gt; !</span><span class="s0">string</span><span class="s2">.</span><span class="s1">IsNullOrEmpty</span><span class="s2">(</span><span class="s1">RequestId</span><span class="s2">);</span>
+
+    <span class="s0">private readonly </span><span class="s1">ILogger</span><span class="s2">&lt;</span><span class="s1">ErrorModel</span><span class="s2">&gt; </span><span class="s1">_logger</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">ErrorModel</span><span class="s2">(</span><span class="s1">ILogger</span><span class="s2">&lt;</span><span class="s1">ErrorModel</span><span class="s2">&gt; </span><span class="s1">logger</span><span class="s2">)</span>
+    <span class="s2">{</span>
+        <span class="s1">_logger </span><span class="s2">= </span><span class="s1">logger</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">OnGet</span><span class="s2">()</span>
+    <span class="s2">{</span>
+        <span class="s1">RequestId </span><span class="s2">= </span><span class="s1">Activity</span><span class="s2">.</span><span class="s1">Current?</span><span class="s2">.</span><span class="s1">Id ?? HttpContext</span><span class="s2">.</span><span class="s1">TraceIdentifier</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
