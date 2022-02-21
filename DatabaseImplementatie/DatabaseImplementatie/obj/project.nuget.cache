@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/LqyHjAOCaCzhhXSk5xVcMYrWhj/69eHaXL7TZTAmRa78C2KMCnrQYALRTkrsOTV6J9PKIxH5mLhc7DwAsnk9Q==",
+  "dgSpecHash": "Py0gEZYLwdRW80YHOCG5RBA58ZyNQCzW+ERk2WVWwd2cRL2fj59WCvnm80TrYGFiOdk/AbPIQqovFT+WF8M9Rw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Marten\\Desktop\\Periode 3 Webdev\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+  "projectFilePath": "C:\\Users\\Marten\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marten\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Marten\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",

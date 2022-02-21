@@ -888,11 +888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marten\\Desktop\\Periode 3 Webdev\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+      "projectUniqueName": "C:\\Users\\Marten\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
       "projectName": "DatabaseImplementatie",
-      "projectPath": "C:\\Users\\Marten\\Desktop\\Periode 3 Webdev\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+      "projectPath": "C:\\Users\\Marten\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
       "packagesPath": "C:\\Users\\Marten\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marten\\Desktop\\Periode 3 Webdev\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\",
+      "outputPath": "C:\\Users\\Marten\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
