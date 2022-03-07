@@ -8,9 +8,9 @@ public class Ophalen : PageModel
 {
     public void OnGet()
     {
-        Resultaat = new afmetingenRepository().GetAll();
+        Resultaat = new uitgaveRepository().GetAll();
     }
     
-    public IEnumerable<afmetingen> Resultaat { get; set; }
+    public IEnumerable<uitgave> Resultaat { get; set; }
     
 }

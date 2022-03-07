@@ -8,13 +8,28 @@
 <form>
     <button type="submit">Ophalen</button>
 </form>
-<ul>
-    @foreach (var afmetingen in Model.Resultaat)
-    {
-        <li>@afmetingen.isbn
-            -- @afmetingen.lengte
-            -- @afmetingen.breedte
-            -- @afmetingen.dikte
-            -- @afmetingen.hoogte</li>
+<br/>
+@{
+        foreach (var uitgaveRow in Model.Resultaat)
+        {
+            <hr/>
+            <div class="row">
+                @foreach (var uitgave in Model.Resultaat)
+                {
+                    <div>Titel: @uitgave.titel</div>
+                    <div>Isbn: @uitgave.isbn</div>
+                    <div>Druk: @uitgave.druk</div>
+                    <div>Taal: @uitgave.taal</div>
+                    <div>Jaar van uitgave: @uitgave.jaar</div>
+                    <div>Aantal bladzijdes: @uitgave.blz</div>
+                    <div>Barcode: @uitgave.barcode</div>
+                    <div>Expliciet? @uitgave.expliciet</div>
+                    <div>Afmetingen: @uitgave.afmetingen</div>
+                    <div>Reeks: @uitgave.reeks</div>
+                    <div>Uitgever: @uitgave.uitgever</div>
+                }
+            </div>
+            <hr/>
+            <br/>
+        } 
     }
-</ul>
