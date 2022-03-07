@@ -16,9 +16,9 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public void OnPost([FromForm] long isbn, [FromForm] float lengte, [FromForm] float breedte, [FromForm] float dikte, [FromForm] float hoogte)
+    public void OnPost([FromForm] string geboortedatum, [FromForm] string aut_naam, [FromForm] string wikipedia_aut, [FromForm] Int32 is_tekenaar, [FromForm] Int32 is_schrijver)
     {
-        new afmetingenRepository().AddData(isbn,lengte, breedte, dikte, hoogte);
+        new afmetingenRepository().AddData(geboortedatum,aut_naam, wikipedia_aut, is_tekenaar, is_schrijver);
     }
 
 }

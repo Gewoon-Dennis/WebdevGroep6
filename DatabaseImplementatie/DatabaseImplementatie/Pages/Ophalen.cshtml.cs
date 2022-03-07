@@ -11,6 +11,6 @@ public class Ophalen : PageModel
         Resultaat = new afmetingenRepository().GetAll();
     }
     
-    public IEnumerable<afmetingen> Resultaat { get; set; }
+    public IEnumerable<artiesten> Resultaat { get; set; }
     
 }
