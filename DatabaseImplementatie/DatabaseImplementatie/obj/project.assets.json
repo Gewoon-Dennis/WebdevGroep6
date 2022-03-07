@@ -881,25 +881,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MGdeJ\\.nuget\\packages\\": {},
+    "C:\\Users\\Marten\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MGdeJ\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+      "projectUniqueName": "C:\\Users\\Marten\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
       "projectName": "DatabaseImplementatie",
-      "projectPath": "C:\\Users\\MGdeJ\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
-      "packagesPath": "C:\\Users\\MGdeJ\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MGdeJ\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\",
+      "projectPath": "C:\\Users\\Marten\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+      "packagesPath": "C:\\Users\\Marten\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marten\\Desktop\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
       ],
       "configFilePaths": [
-        "C:\\Users\\MGdeJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Marten\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
