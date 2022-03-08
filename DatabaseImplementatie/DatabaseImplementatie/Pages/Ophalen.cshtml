@@ -1,35 +1,36 @@
 ﻿@page
+@using DatabaseImplementatie.Models
 @model DatabaseImplementatie.Pages.Ophalen
 
 @{
     ViewData["Title"] = "Ophalen";
 }
 
-<form>
-    <button type="submit">Ophalen</button>
+<form method="post">
+    <button type="submit" asp-page-handler="AZ">A-Z</button>
+    <button type="submit" asp-page-handler="Reeks">Reeks</button>
 </form>
 <br/>
+
+
+
 @{
-        foreach (var uitgaveRow in Model.Resultaat)
-        {
-            <hr/>
-            <div class="row">
-                @foreach (var uitgave in Model.Resultaat)
-                {
-                    <div>Titel: @uitgave.titel</div>
-                    <div>Isbn: @uitgave.isbn</div>
-                    <div>Druk: @uitgave.druk</div>
-                    <div>Taal: @uitgave.taal</div>
-                    <div>Jaar van uitgave: @uitgave.jaar</div>
-                    <div>Aantal bladzijdes: @uitgave.blz</div>
-                    <div>Barcode: @uitgave.barcode</div>
-                    <div>Expliciet? @uitgave.expliciet</div>
-                    <div>Afmetingen: @uitgave.afmetingen</div>
-                    <div>Reeks: @uitgave.reeks</div>
-                    <div>Uitgever: @uitgave.uitgever</div>
-                }
-            </div>
-            <hr/>
-            <br/>
-        } 
+    foreach (var item in Model.ResultaatUitgave)
+    {
+        <li>Titel: @item.titel</li>
+        <li>Isbn: @item.isbn</li>
+        <li>Druk: @item.druk</li>
+        <li>Taal: @item.taal</li>
+        <li>Jaar: @item.jaar</li>
+        <li>Blz: @item.blz</li>
+        <li>Barcode: @item.barcode</li>
+        <li>Expliciet? @item.expliciet</li>
+        <li>Afmetingen: @item.afmetingen</li>
+        <li>Reeks: @item.reeks</li>
+        <li>Uitgever: @item.uitgever</li>
+        <hr/>
     }
+}
+
+
+

@@ -8,9 +8,19 @@ public class Ophalen : PageModel
 {
     public void OnGet()
     {
-        Resultaat = new uitgaveRepository().GetAll();
+        ResultaatUitgave = new uitgaveRepository().GetAll();
+        
     }
     
-    public IEnumerable<uitgave> Resultaat { get; set; }
+    public void OnPostReeks()
+    {
+        ResultaatUitgave = new uitgaveRepository().GetReeks();
+    }
+    public void OnPostAZ()
+    {
+        ResultaatUitgave = new uitgaveRepository().GetAZ();
+    }
+
+    public IEnumerable<uitgave> ResultaatUitgave { get; set; }
     
 }

@@ -1,0 +1,20 @@
+﻿@page
+@model DatabaseImplementatie.Pages.OphalenArtiest
+
+@{
+    ViewData["Title"] = "Artiest Ophalen";
+}
+
+@{
+    foreach (var item in Model.ResultaatArtiest)
+    {
+        <li>Naam: @item.naam</li>
+        <li>Schrijver: @item.schrijver</li>
+        <li>Schrijver: @item.tekenaar</li>
+        <li>Schrijver: @item.wikipedia</li>
+        <li>Schrijver: @item.geboortedatum</li>
+        <hr/>
+        
+    }
+    
+}

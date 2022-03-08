@@ -16,6 +16,17 @@ public class uitgaveRepository
         return Connect().Query<uitgave>("SELECT * FROM uitgave");
     }
 
+    public IEnumerable<uitgave> GetAZ()
+    {
+        using var connection = Connect();
+        return Connect().Query<uitgave>("SELECT * FROM uitgave Order BY titel ");
+    }
+    public IEnumerable<uitgave> GetReeks()
+    {
+        using var connection = Connect();
+        return Connect().Query<uitgave>("SELECT * FROM uitgave Order BY reeks ");
+    }
+
     public void AddData(string titel, long isbn, int druk, string taal, int jaar, int blz, long barcode, int expliciet,
         string afmetingen, string reeks, string uitgever)
     {
