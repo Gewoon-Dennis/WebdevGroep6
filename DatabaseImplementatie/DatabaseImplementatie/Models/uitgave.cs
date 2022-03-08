@@ -2,6 +2,7 @@
 
 public class uitgave
 {
+        public string id { get; set; }
         public string titel { get; set; }
         public long isbn { get; set; }
         public int druk { get; set; }

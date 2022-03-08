@@ -17,17 +17,22 @@
 @{
     foreach (var item in Model.ResultaatUitgave)
     {
-        <li>Titel: @item.titel</li>
-        <li>Isbn: @item.isbn</li>
-        <li>Druk: @item.druk</li>
-        <li>Taal: @item.taal</li>
-        <li>Jaar: @item.jaar</li>
-        <li>Blz: @item.blz</li>
-        <li>Barcode: @item.barcode</li>
-        <li>Expliciet? @item.expliciet</li>
-        <li>Afmetingen: @item.afmetingen</li>
-        <li>Reeks: @item.reeks</li>
-        <li>Uitgever: @item.uitgever</li>
+        <form>
+            <li>Titel: @item.titel</li>
+            <li>Isbn: @item.isbn</li>
+            <li>Druk: @item.druk</li>
+            <li>Taal: @item.taal</li>
+            <li>Jaar: @item.jaar</li>
+            <li>Blz: @item.blz</li>
+            <li>Barcode: @item.barcode</li>
+            <li>Expliciet? @item.expliciet</li>
+            <li>Afmetingen: @item.afmetingen</li>
+            <li>Reeks: @item.reeks</li>
+            <li>Uitgever: @item.uitgever</li>
+            <input type="hidden" value="@item.id" />
+            <button type="Submit" asp-page-handler="AddToWishList">+</button>
+        </form>
+        
         <hr/>
     }
 }
