@@ -4,11 +4,11 @@ using MySql.Data.MySqlClient;
 
 namespace DatabaseImplementatie.Repository;
 
-public class afmetingenRepository
+public class artiestenRepository
 {
     private MySqlConnection Connect()
     {
-        return new MySqlConnection("Server=24.132.196.32;Database=webdevsite;Uid=DBAdmin;Pwd=Password12345!;Port=3306");
+        return new MySqlConnection("Server=24.132.196.32;Database=alternatief;Uid=DBAdmin;Pwd=Password12345!;Port=3306");
     }
     
     public IEnumerable<artiesten> GetAll()
@@ -22,7 +22,7 @@ public class afmetingenRepository
     {
 
         string sql =
-            "INSERT INTO artiest (geboortedatum, aut_naam, wikipedia_aut, is_tekenaar, is_schrijver) VALUES (@geboortedatum, @aut_naam, @wikipedia_aut, @is_tekenaar, @is_schrijver);";
+            "INSERT INTO artiest (geboortedatum, naam, schrijver, tekenaar, wikipedia) VALUES (@geboortedatum, @aut_naam, @is_schrijver, @is_tekenaar, @wikipedia_aut);";
             //"INSERT INTO afmetingen (isbn, lengte, breedte, dikte, hoogte) VALUES (@isbn, @lengte, @breedte, @dikte, @hoogte);";
         
         using var connection = Connect();
