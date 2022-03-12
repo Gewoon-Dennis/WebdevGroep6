@@ -6,13 +6,33 @@ namespace DatabaseImplementatie.Pages;
 
 public class Toevoegen : PageModel
 {
-    public void OnGet()
-    {
-        
-    }
+    [BindProperty]
+    public string titel { get; set; }
+    [BindProperty]
+    public long isbn { get; set; }
+    [BindProperty]
+    public int druk { get; set; }
+    [BindProperty]
+    public string taal { get; set; }
+    [BindProperty]
+    public int jaar { get; set; }
+    [BindProperty]
+    public int blz { get; set; }
+    [BindProperty]
+    public long barcode { get; set; }
+    [BindProperty]
+    public int expliciet { get; set; }
+    [BindProperty]
+    public string afmetingen { get; set; }
+    [BindProperty]
+    public string reeks { get; set; }
+    [BindProperty]
+    public string uitgever { get; set; }
+
+    public string FormResultaat { get; set; } = "";
     
-    public void OnPost([FromForm] long isbn, [FromForm] float lengte, [FromForm] float breedte, [FromForm] float dikte, [FromForm] float hoogte)
+    public void OnPost()
     {
-        new afmetingenRepository().AddData(isbn,lengte, breedte, dikte, hoogte);
+        new uitgaveRepository().AddData(titel, isbn, druk, taal, jaar, blz, barcode, expliciet, afmetingen, reeks, uitgever);
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using DatabaseImplementatie.Models;
-using DatabaseImplementatie.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
@@ -16,9 +15,9 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public void OnPost([FromForm] long isbn, [FromForm] float lengte, [FromForm] float breedte, [FromForm] float dikte, [FromForm] float hoogte)
+    public void OnPost()
     {
-        new afmetingenRepository().AddData(isbn,lengte, breedte, dikte, hoogte);
+        
     }
 
 }
