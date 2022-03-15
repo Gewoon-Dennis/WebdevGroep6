@@ -1,1 +1,13 @@
-﻿16468346996679192
+﻿<style>
+        .shade {
+            background-color: aqua;
+        }
+
+        .body-container {
+            /*remove the container default padding attribute*/
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+            /*increase width as per your need*/
+            max-width: 100%;
+        } 
+    </style>
