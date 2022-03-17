@@ -8,11 +8,12 @@
 @{
     foreach (var item in Model.ResultaatArtiest)
     {
+        string url = @item.wikipedia;
         <li>Naam: @item.naam</li>
         <li>Schrijver: @item.schrijver</li>
-        <li>Schrijver: @item.tekenaar</li>
-        <li>Schrijver: @item.wikipedia</li>
-        <li>Schrijver: @item.geboortedatum</li>
+        <li>Tekenaar: @item.tekenaar</li>
+        <li>Wikipedia: @item.wikipedia</li>
+        <li>Geboortedatum: @item.geboortedatum</li>
         <hr/>
         
     }

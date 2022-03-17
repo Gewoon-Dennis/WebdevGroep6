@@ -15,4 +15,4 @@ public class artiestRepository
         using var connection = Connect();
         return Connect().Query<artiest>("SELECT * FROM artiest");
     }
-}
+} 
