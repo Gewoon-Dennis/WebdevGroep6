@@ -1,5 +1,6 @@
 ﻿using DatabaseImplementatie.Models;
 using DatabaseImplementatie.Repository;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DatabaseImplementatie.Pages;
@@ -10,6 +11,11 @@ public class Ophalen : PageModel
     {
         ResultaatUitgave = new uitgaveRepository().GetAll();
         
+    }
+
+    public void OnPostZoek([FromForm] string zoekvak)
+    {
+        ResultaatUitgave = new uitgaveRepository().Zoek(zoekvak);
     }
     
     public void OnPostReeks()

@@ -8,12 +8,18 @@ public class uitgaveRepository
 {
     private MySqlConnection Connect()
     {
-        return new MySqlConnection("Server=24.132.196.32;Database=alternatief;Uid=DBAdmin;Pwd=Password12345!;Port=3306");
+        return new MySqlConnection("Server=178.84.118.110;Database=alternatief;Uid=DBAdmin;Pwd=Password12345!;Port=3306");
     }
     public IEnumerable<uitgave> GetAll()
     {
         using var connection = Connect();
         return Connect().Query<uitgave>("SELECT * FROM uitgave");
+    }
+
+    public IEnumerable<uitgave> Zoek(string term)
+    {
+        using var connection = Connect();
+        return Connect().Query<uitgave>("select * from uitgave where titel like '%%'");
     }
 
     public IEnumerable<uitgave> GetAZ()
