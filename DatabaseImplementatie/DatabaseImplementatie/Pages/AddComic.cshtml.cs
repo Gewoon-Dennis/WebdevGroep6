@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DatabaseImplementatie.Pages;
 
-public class Toevoegen : PageModel
+public class AddComic : PageModel
 {
     [BindProperty]
     public string titel { get; set; }

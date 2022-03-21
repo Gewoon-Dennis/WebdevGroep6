@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace DatabaseImplementatie.Pages;
 
-public class Ophalen : PageModel
+public class GetUitgave : PageModel
 {
     private MySqlConnection Connect()
     {
@@ -29,7 +29,7 @@ public class Ophalen : PageModel
         ResultaatUitgave = new uitgaveRepository().GetAZ();
     }
 
-    public void OnPostAddToWishList([FromForm] string @item.id)
+    public void OnPostAddToWishList([FromForm] string @item)
     {
         using var connection = Connect();
         string sql = "INSERT INTO wishlist_has_stripboek (uitgave_id) VALUES (@id) WHERE wishlist_id= @wishlist_id AND wishlist_gebruiker_naam= @gebruiker_naam AND wishlist_gebruiker_wachtwoord= @gebruiker_wachtwoord";
@@ -37,7 +37,7 @@ public class Ophalen : PageModel
         int wishlist_id = 1;
         string gebruikernaam = "Dennis";
         string wachtwoord = "Wachtwoord";
-        connection.Execute(sql, new {id = @item.id, wishlist_id = wishlist_id, wishlist_gebruiker_naam = gebruikernaam, wishlist_gebruiker_wachtwoord = wachtwoord });
+        connection.Execute(sql, new {id = @item, wishlist_id = wishlist_id, wishlist_gebruiker_naam = gebruikernaam, wishlist_gebruiker_wachtwoord = wachtwoord });
     }
 
     public IEnumerable<uitgave> ResultaatUitgave { get; set; }

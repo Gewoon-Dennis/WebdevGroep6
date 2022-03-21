@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DatabaseImplementatie.Pages;
 
-public class OphalenArtiest : PageModel
+public class GetArtists : PageModel
 {
     public void OnGet()
     {
