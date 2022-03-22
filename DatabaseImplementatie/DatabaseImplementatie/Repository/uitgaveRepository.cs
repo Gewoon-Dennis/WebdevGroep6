@@ -6,9 +6,11 @@ namespace DatabaseImplementatie.Repository;
 
 public class uitgaveRepository
 {
+    public string connectionString =
+        "Server=178.84.118.110;Database=alternatief;Uid=DBAdmin;Pwd=Password12345!;Port=3306";
     private MySqlConnection Connect()
     {
-        return new MySqlConnection("Server=24.132.196.32;Database=alternatief;Uid=DBAdmin;Pwd=Password12345!;Port=3306");
+        return new MySqlConnection(connectionString);
     }
     public IEnumerable<uitgave> GetAll()
     {
