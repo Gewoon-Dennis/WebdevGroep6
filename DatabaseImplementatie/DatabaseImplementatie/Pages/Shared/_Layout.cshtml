@@ -39,6 +39,10 @@
                         <li class="nav-item"> <a class="nav-link text-dark" asp-area="" asp-page="/Account">Account</a></li>
                         <li class="nav-item"> <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Logout</a></li>
                     }
+                    @if (Login.IsAdmin == true)
+                    {
+                        <li class="nav-item"> <a class="nav-link text-dark" asp-area="" asp-page="/AdminScreen">AdminScreen</a></li>
+                    }
                 </ul>
             </div>
         </div>
