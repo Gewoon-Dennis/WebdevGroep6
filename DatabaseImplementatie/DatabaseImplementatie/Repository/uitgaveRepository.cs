@@ -12,10 +12,15 @@ public class uitgaveRepository
     {
         return new MySqlConnection(connectionString);
     }
-    public IEnumerable<uitgave> GetAll()
+    public IEnumerable<UitgavePak> GetAll()
     {
         using var connection = Connect();
-        return Connect().Query<uitgave>("SELECT * FROM uitgave");
+        return Connect().Query<UitgavePak>(@"SELECT uitgave_titel, isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, artiest_naam, rol_schrijver, rol_tekenaar, afbeelding, verified
+        FROM uitgave
+        INNER JOIN heeft USING(uitgave_id)
+        INNER JOIN reeks USING (reeks_id)
+        INNER JOIN uitgever USING (uitgever_id)
+        INNER JOIN artiest USING (artiest_id);");
     }
 
     public IEnumerable<uitgave> GetAZ()
