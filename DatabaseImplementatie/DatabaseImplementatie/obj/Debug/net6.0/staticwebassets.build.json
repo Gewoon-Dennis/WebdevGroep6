@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PtUP2RrkGGGlj6MIPbrcPwwBiIWAiAeMgTAXDfA/+yE=",
+  "Hash": "g3cXXlwhfU/rbbh3lwaFm/g0wP4yQx49gHXtkzLyZ4A=",
   "Source": "DatabaseImplementatie",
   "BasePath": "_content/DatabaseImplementatie",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Dennis\\Documents\\GitHub\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DatabaseImplementatie.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dennis\\Documents\\GitHub\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\wwwroot\\css\\cardcss.css",
+      "SourceId": "DatabaseImplementatie",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dennis\\Documents\\GitHub\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\wwwroot\\",
+      "BasePath": "_content/DatabaseImplementatie",
+      "RelativePath": "css/cardcss.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\cardcss.css"
     },
     {
       "Identity": "C:\\Users\\Dennis\\Documents\\GitHub\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\wwwroot\\css\\site.css",
