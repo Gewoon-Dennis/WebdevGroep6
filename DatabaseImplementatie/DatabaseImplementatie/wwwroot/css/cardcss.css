@@ -7,3 +7,9 @@ button#a{
     justify-content: space-between;
     align-self: end;
 }
+#password_contain_text{
+    font-size: small;
+}
+div#spacing{
+    padding-bottom: 5px;
+}
