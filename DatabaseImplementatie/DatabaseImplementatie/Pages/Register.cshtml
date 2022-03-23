@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/css/cardcss.css" asp-append-version="true"/>
 <body>
 <div>
-    <div class="container border" style="padding: 20px">
+    <div class="container border rounded" style="padding: 20px">
     <form id="register" asp-page-handler="Register">
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div class="form-group row" id="spacing">
@@ -39,7 +39,7 @@
         </div>
         <div class="form-group row"  id="spacing">
             <div class="col-2">
-                <label>Confirm Password</label>
+                <label>Confirm Password:</label>
             </div>
             <div class="col-4">
                 <input type="password" id="confirmPassword" placeholder="Confirm Password" asp-for="WachtwoordCheck"/>

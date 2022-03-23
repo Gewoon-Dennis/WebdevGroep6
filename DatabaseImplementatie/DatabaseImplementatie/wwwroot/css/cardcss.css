@@ -6,10 +6,23 @@
 button#a{
     justify-content: space-between;
     align-self: end;
+    
 }
 #password_contain_text{
     font-size: small;
 }
 div#spacing{
+    display: flex;
     padding-bottom: 5px;
+    align-self: auto;
+    flex-wrap: wrap;
+    flex-basis: auto;
+}
+#spacing-button{
+    display: flex;
+    align-items: center;
+    padding-top: 22px;
+    align-self: auto;
+
+    
 }
