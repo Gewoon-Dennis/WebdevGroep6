@@ -15,4 +15,8 @@
       <Folder Include="Pages\StandardPages" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="wwwroot\css\cardcss.css" />
+    </ItemGroup>
+
 </Project>

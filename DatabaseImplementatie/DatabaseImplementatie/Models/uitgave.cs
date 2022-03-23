@@ -14,4 +14,5 @@ public class uitgave
         public string afmetingen { get; set; }
         public string reeks { get; set; }
         public string uitgever { get; set; }
+        public string beschrijving { get; set; }
 }

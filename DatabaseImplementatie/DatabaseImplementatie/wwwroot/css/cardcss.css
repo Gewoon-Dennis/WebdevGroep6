@@ -1,0 +1,9 @@
+﻿div.a{
+    justify-content: space-between;
+    column-count: 2;
+    
+}
+button#a{
+    justify-content: space-between;
+    align-self: end;
+}
