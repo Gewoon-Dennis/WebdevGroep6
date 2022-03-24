@@ -15,6 +15,6 @@ public class UitgavePak
         public string uitgever_naam { get; set; }
         public string tekennaar_naam { get; set; }
         public string schrijver_naam { get; set; }
-        public string afbeelding { get; set; }
+        public byte[] afbeelding { get; set; }
         public bool verified { get; set; }
 }

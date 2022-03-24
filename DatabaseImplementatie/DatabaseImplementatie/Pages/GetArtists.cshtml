@@ -8,17 +8,17 @@
 @{
     foreach (var schrijver in Model.SchrijverList)
     {
-        <li>Naam: @schrijver.C_schrijver_naam</li>
-        <li>Geslacht: @schrijver.C_geslacht</li>
-        <li>Wikipedia: @schrijver.C_wikipedia_schrijver</li>
-        <li>Geboortedatum: @schrijver.C_geboortedatum</li>
+        <li>Naam: @schrijver.schrijver_naam</li>
+        <li>Geslacht: @schrijver.geslacht</li>
+        <li>Wikipedia: @schrijver.wikipedia_schrijver</li>
+        <li>Geboortedatum: @schrijver.geboortedatum</li>
     }
 
     foreach (var tekenaar in Model.TekenaarList)
     {
-        <li>Naam: @tekenaar.C_tekenaar_naam</li>
-        <li>Geslacht: @tekenaar.C_geslacht</li>
-        <li>Wikipedia: @tekenaar.C_wikipedia_tekenaar</li>
-        <li>Geboortedatum: @tekenaar.C_geboortedatum</li>
+        <li>Naam: @tekenaar.tekenaar_naam</li>
+        <li>Geslacht: @tekenaar.geslacht</li>
+        <li>Wikipedia: @tekenaar.wikipedia_tekenaar</li>
+        <li>Geboortedatum: @tekenaar.geboortedatum</li>
     }
 }

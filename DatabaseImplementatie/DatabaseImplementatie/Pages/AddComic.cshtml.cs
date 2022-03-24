@@ -7,7 +7,7 @@ namespace DatabaseImplementatie.Pages;
 
 public class AddComic : PageModel
 {
-    [BindProperty] public C_uitgave NieuweUitgave { get; set; }
+    [BindProperty] public uitgave NieuweUitgave { get; set; }
     [BindProperty] public reeks ReeksNaam { get; set; }
     [BindProperty] public uitgever UitgeverNaam { get; set; }
     [BindProperty] public tekenaar TekenaarNaam { get; set; }

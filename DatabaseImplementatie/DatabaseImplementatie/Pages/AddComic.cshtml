@@ -6,7 +6,6 @@
 }
 <link rel="stylesheet" href="~/css/cardcss.css" asp-append-version="true"/>
 
-<div>
     <h1 style="text-align: center">Add a comic!</h1>
     <hr/>
     <form method="post">
@@ -17,6 +16,8 @@
             <div class="col-4">
                 <input type="text" id="titel" placeholder="Strip naam" asp-for="NieuweUitgave.uitgave_titel"/>
             </div>
+        </div>
+        
             <div class="form-group row" id="spacingex">
                 <div class="col-2">
                     <label>Beschrijving: </label>
@@ -25,7 +26,7 @@
                     <textarea type="text" id="beschrijving" placeholder="Beschrijving" maxlength="300" asp-for="NieuweUitgave.beschrijving"></textarea>
                 </div>
             </div>
-        </div>
+
         
         <div class="form-group row" id="spacingex">
             <div class="col-2">
@@ -77,49 +78,50 @@
                 <label>Expliciet </label>
             </div>
             <div class="col-4">
-                <input type="checkbox" id="blz" placeholder="expliciet" asp-for="NieuweUitgave.expliciet"/>
+                <input type="checkbox" id="exp" placeholder="expliciet" asp-for="NieuweUitgave.expliciet"/>
 
             </div>
         </div>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
-                <label>Afmetingen </label>
+                <label>Afmetingen: </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="afmetingen" asp-for="NieuweUitgave.afmetingen"/>
+                <input type="text" id="afm" placeholder="afmetingen" asp-for="NieuweUitgave.afmetingen"/>
 
             </div>
         </div>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
-                <label>afbeelding </label>
+                <label>afbeelding: </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="afbeelding url" asp-for="NieuweUitgave.afbeelding"/>
+                <input type="file" accept="image/*" id="afb" asp-for="NieuweUitgave.afbeelding"/>
 
             </div>
         </div>
+        <hr/>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
-                <label>tekenaar </label>
+                <label>tekenaar: </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="tekenaarnaam" asp-for="TekenaarNaam.tekenaar_naam"/>
+                <input type="text" id="teken" placeholder="tekenaarnaam" asp-for="TekenaarNaam.tekenaar_naam"/>
 
             </div>
         </div>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
-                <label>tekenaar jarig </label>
+                <label>tekenaar jarig: </label>
             </div>
             <div class="col-4">
-                <input type="date" id="blz" placeholder="jarig" asp-for="TekenaarNaam.geboortedatum"/>
+                <input type="date" id="jarigteken" placeholder="jarig" asp-for="TekenaarNaam.geboortedatum"/>
 
             </div>
         </div>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
-                <label>tekenaar gender </label>
+                <label>tekenaar gender: </label>
             </div>
             <div class="col-4">
                 <input type="text" id="blz" placeholder="gender" asp-for="TekenaarNaam.geslacht"/>
@@ -128,13 +130,14 @@
         </div>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
-                <label>tekenaar wiki </label>
+                <label>tekenaar wiki: </label>
             </div>
             <div class="col-4">
                 <input type="text" id="blz" placeholder="wiki link" asp-for="TekenaarNaam.wikipedia_tekenaar"/>
 
             </div>
         </div>
+        <hr/>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
                 <label>schrijver </label>
@@ -171,6 +174,7 @@
     
             </div>
         </div>
+        <hr/>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
                 <label>reeksnaam </label>
@@ -189,6 +193,6 @@
     
             </div>
         </div>
-        <button type="submit" class="btn-primary">Add Comic</button>
+        <button type="submit" class="btn btn-primary">Add Comic</button>
     </form>
-</div>
+

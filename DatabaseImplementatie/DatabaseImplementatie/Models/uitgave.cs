@@ -1,6 +1,8 @@
-﻿namespace DatabaseImplementatie.Models;
+﻿using System.Net.Mime;
 
-public class C_uitgave
+namespace DatabaseImplementatie.Models;
+
+public class uitgave
 {
         public Guid uitgave_id { get; set; }
         public string uitgave_titel { get; set; }
@@ -15,7 +17,7 @@ public class C_uitgave
         public Guid uitgever_id { get; set; }
         public Guid schrijver_id { get; set; }
         public Guid tekenaar_id { get; set; }
-        public string afbeelding { get; set; }
+        public byte[] afbeelding { get; set; }
         public string beschrijving { get; set; }
         public bool verified { get; set; }
 }
