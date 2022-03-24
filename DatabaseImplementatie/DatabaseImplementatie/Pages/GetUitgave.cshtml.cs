@@ -19,11 +19,11 @@ public class GetUitgave : PageModel
     
     public void OnPostReeks()
     {
-      //  ResultaatUitgave = new uitgaveRepository().GetReeks();
+        UitgaveList = new uitgaveRepository().GetReeks();
     }
     public void OnPostAZ()
     {
-      //  ResultaatUitgave = new uitgaveRepository().GetAZ();
+        UitgaveList = new uitgaveRepository().GetAZ();
     }
 
     public IEnumerable<UitgavePak> UitgaveList { get; set; }
