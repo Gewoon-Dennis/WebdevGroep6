@@ -27,22 +27,15 @@
                     </div>
                     <div class="col-8">
                         <div class="card-body col-md-8">
-                            <h5 class="card-title">@comic.C_uitgave_titel</h5>
-                            <p class="card-text">Uitgever: @comic.C_uitgever_naam</p>
-                            <p class="card-text">Jaar: @comic.C_uitgavejaar</p>
-                            @if (comic.C_expliciet == 0)
-                            {
-                                <p class="card-text">Expliciet: nee</p>
-                            }
-                            else
-                            {
-                                <p class="card-text">Expliciet: ja</p>
-                            }
-                            <p class="card-text">Reeks: @comic.C_reeks_naam</p>
+                            <h5 class="card-title">@comic.uitgave_titel</h5>
+                            <p class="card-text">Uitgever: @comic.uitgever_naam</p>
+                            <p class="card-text">Jaar: @comic.uitgavejaar</p>
+                            <p class="card-text">@comic.expliciet</p>
+                            <p class="card-text">Reeks: @comic.reeks_naam</p>
                             <div class="a">
-                                <p class="card-text"><small class="text-muted">Druk: @comic.C_druk</small></p>
-                                <input type="hidden" value="@comic.C_uitgave_id"/>
-                                <a class="stretched-link text-decoration-none" asp-page="ComicInfo"></a>
+                                <p class="card-text"><small class="text-muted">Druk: @comic.druk</small></p>
+                                <input type="hidden" value="@comic.uitgave_id"/>
+                                
                             </div>
                         </div>
                     </div>
