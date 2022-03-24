@@ -15,14 +15,14 @@
                 <label>Strip naam: </label>
             </div>
             <div class="col-4">
-                <input type="text" id="titel" placeholder="Strip naam" asp-for="NieuweUitgave.C_uitgave_titel"/>
+                <input type="text" id="titel" placeholder="Strip naam" asp-for="NieuweUitgave.uitgave_titel"/>
             </div>
             <div class="form-group row" id="spacingex">
                 <div class="col-2">
                     <label>Beschrijving: </label>
                 </div>
                 <div class="col-4">
-                    <textarea type="text" id="beschrijving" placeholder="Beschrijving" maxlength="300" asp-for="NieuweUitgave.C_beschrijving"></textarea>
+                    <textarea type="text" id="beschrijving" placeholder="Beschrijving" maxlength="300" asp-for="NieuweUitgave.beschrijving"></textarea>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                 <label>ISBN: </label>
             </div>
             <div class="col-4">
-                <input type="number" id="ISBN" placeholder="ISBN" asp-for="NieuweUitgave.C_isbn"/>
+                <input type="number" id="ISBN" placeholder="ISBN" asp-for="NieuweUitgave.isbn"/>
 
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <label>Uitgave jaar: </label>
             </div>
             <div class="col-4">
-                <input type="date" id="uitgavejaar" placeholder="Uitgave Jaar" asp-for="NieuweUitgave.C_uitgavejaar"/>
+                <input type="date" id="uitgavejaar" placeholder="Uitgave Jaar" asp-for="NieuweUitgave.uitgavejaar"/>
 
             </div>
         </div>
@@ -50,7 +50,7 @@
                 <label>Druk: </label>
             </div>
             <div class="col-4">
-                <input type="number" id="Druk" placeholder="Druk" asp-for="NieuweUitgave.C_druk"/>
+                <input type="number" id="Druk" placeholder="Druk" asp-for="NieuweUitgave.druk"/>
 
             </div>
         </div>
@@ -59,7 +59,7 @@
                 <label>Taal: </label>
             </div>
             <div class="col-4">
-                <input type="text" maxlength="20" id="taal" placeholder="Taal" asp-for="NieuweUitgave.C_taal"/>
+                <input type="text" maxlength="20" id="taal" placeholder="Taal" asp-for="NieuweUitgave.taal"/>
 
             </div>
         </div>
@@ -68,7 +68,7 @@
                 <label>Aantal bladzijden </label>
             </div>
             <div class="col-4">
-                <input type="number" id="blz" placeholder="Aantal blz" asp-for="NieuweUitgave.C_blz"/>
+                <input type="number" id="blz" placeholder="Aantal blz" asp-for="NieuweUitgave.blz"/>
 
             </div>
         </div>
@@ -77,7 +77,7 @@
                 <label>Expliciet </label>
             </div>
             <div class="col-4">
-                <input type="checkbox" id="blz" placeholder="expliciet" asp-for="NieuweUitgave.C_expliciet"/>
+                <input type="checkbox" id="blz" placeholder="expliciet" asp-for="NieuweUitgave.expliciet"/>
 
             </div>
         </div>
@@ -86,7 +86,7 @@
                 <label>Afmetingen </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="afmetingen" asp-for="NieuweUitgave.C_afmetingen"/>
+                <input type="text" id="blz" placeholder="afmetingen" asp-for="NieuweUitgave.afmetingen"/>
 
             </div>
         </div>
@@ -95,7 +95,7 @@
                 <label>afbeelding </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="afbeelding url" asp-for="NieuweUitgave.C_afbeelding"/>
+                <input type="text" id="blz" placeholder="afbeelding url" asp-for="NieuweUitgave.afbeelding"/>
 
             </div>
         </div>
@@ -104,7 +104,7 @@
                 <label>tekenaar </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="tekenaarnaam" asp-for="TekenaarNaam.C_tekenaar_naam"/>
+                <input type="text" id="blz" placeholder="tekenaarnaam" asp-for="TekenaarNaam.tekenaar_naam"/>
 
             </div>
         </div>
@@ -113,7 +113,7 @@
                 <label>tekenaar jarig </label>
             </div>
             <div class="col-4">
-                <input type="date" id="blz" placeholder="jarig" asp-for="TekenaarNaam.C_geboortedatum"/>
+                <input type="date" id="blz" placeholder="jarig" asp-for="TekenaarNaam.geboortedatum"/>
 
             </div>
         </div>
@@ -122,7 +122,7 @@
                 <label>tekenaar gender </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="gender" asp-for="TekenaarNaam.C_geslacht"/>
+                <input type="text" id="blz" placeholder="gender" asp-for="TekenaarNaam.geslacht"/>
 
             </div>
         </div>
@@ -131,7 +131,7 @@
                 <label>tekenaar wiki </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="wiki link" asp-for="TekenaarNaam.C_wikipedia_tekenaar"/>
+                <input type="text" id="blz" placeholder="wiki link" asp-for="TekenaarNaam.wikipedia_tekenaar"/>
 
             </div>
         </div>
@@ -140,7 +140,7 @@
                 <label>schrijver </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="schrijver" asp-for="SchrijverNaam.C_schrijver_naam"/>
+                <input type="text" id="blz" placeholder="schrijver" asp-for="SchrijverNaam.schrijver_naam"/>
 
             </div>
         </div>
@@ -149,7 +149,7 @@
                 <label>schrijver jarig </label>
             </div>
             <div class="col-4">
-                <input type="date" id="blz" placeholder="jarig" asp-for="SchrijverNaam.C_geboortedatum"/>
+                <input type="date" id="blz" placeholder="jarig" asp-for="SchrijverNaam.geboortedatum"/>
     
             </div>
         </div>
@@ -158,7 +158,7 @@
                 <label>schrijver gender </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="gender" asp-for="SchrijverNaam.C_geslacht"/>
+                <input type="text" id="blz" placeholder="gender" asp-for="SchrijverNaam.geslacht"/>
     
             </div>
         </div>
@@ -167,7 +167,7 @@
                 <label>schrijver wiki </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="Wiki link" asp-for="SchrijverNaam.C_wikipedia_schrijver"/>
+                <input type="text" id="blz" placeholder="Wiki link" asp-for="SchrijverNaam.wikipedia_schrijver"/>
     
             </div>
         </div>
@@ -176,7 +176,7 @@
                 <label>reeksnaam </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="reeksnaam" asp-for="ReeksNaam.C_reeks_naam"/>
+                <input type="text" id="blz" placeholder="reeksnaam" asp-for="ReeksNaam.reeks_naam"/>
     
             </div>
         </div>
@@ -185,7 +185,7 @@
                 <label>uitgevernaam </label>
             </div>
             <div class="col-4">
-                <input type="text" id="blz" placeholder="uitgevernaam" asp-for="UitgeverNaam.C_uitgever_naam"/>
+                <input type="text" id="blz" placeholder="uitgevernaam" asp-for="UitgeverNaam.uitgever_naam"/>
     
             </div>
         </div>

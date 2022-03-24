@@ -15,17 +15,17 @@ public class AddComic : PageModel
   
     public void OnPost()
     {
-        NieuweUitgave.C_uitgave_id = Guid.NewGuid();
-        ReeksNaam.C_reeks_id = Guid.NewGuid();
-        UitgeverNaam.C_uitgever_id = Guid.NewGuid();
-        TekenaarNaam.C_tekenaar_id = Guid.NewGuid();
-        SchrijverNaam.C_schrijver_id = Guid.NewGuid();
+        NieuweUitgave.uitgave_id = Guid.NewGuid();
+        ReeksNaam.reeks_id = Guid.NewGuid();
+        UitgeverNaam.uitgever_id = Guid.NewGuid();
+        TekenaarNaam.tekenaar_id = Guid.NewGuid();
+        SchrijverNaam.schrijver_id = Guid.NewGuid();
 
-        NieuweUitgave.C_reeks_id = ReeksNaam.C_reeks_id;
-        NieuweUitgave.C_uitgever_id = UitgeverNaam.C_uitgever_id;
-        NieuweUitgave.C_schrijver_id = SchrijverNaam.C_schrijver_id;
-        NieuweUitgave.C_tekenaar_id = TekenaarNaam.C_tekenaar_id;
-        NieuweUitgave.C_verified = false;
+        NieuweUitgave.reeks_id = ReeksNaam.reeks_id;
+        NieuweUitgave.uitgever_id = UitgeverNaam.uitgever_id;
+        NieuweUitgave.schrijver_id = SchrijverNaam.schrijver_id;
+        NieuweUitgave.tekenaar_id = TekenaarNaam.tekenaar_id;
+        NieuweUitgave.verified = false;
         
         new uitgaveRepository().AddUitgave(NieuweUitgave, ReeksNaam, UitgeverNaam, TekenaarNaam, SchrijverNaam);
     }

@@ -2,20 +2,20 @@
 
 public class C_uitgave
 {
-        public Guid C_uitgave_id { get; set; }
-        public string C_uitgave_titel { get; set; }
-        public long C_isbn { get; set; }
-        public int C_uitgavejaar { get; set; }
-        public int C_druk { get; set; }
-        public string C_taal { get; set; }
-        public int C_blz { get; set; }
-        public bool C_expliciet { get; set; }
-        public string C_afmetingen { get; set; }
-        public Guid C_reeks_id { get; set; }
-        public Guid C_uitgever_id { get; set; }
-        public Guid C_schrijver_id { get; set; }
-        public Guid C_tekenaar_id { get; set; }
-        public string C_afbeelding { get; set; }
-        public string C_beschrijving { get; set; }
-        public bool C_verified { get; set; }
+        public Guid uitgave_id { get; set; }
+        public string uitgave_titel { get; set; }
+        public long isbn { get; set; }
+        public string uitgavejaar { get; set; }
+        public int druk { get; set; }
+        public string taal { get; set; }
+        public int blz { get; set; }
+        public bool expliciet { get; set; }
+        public string afmetingen { get; set; }
+        public Guid reeks_id { get; set; }
+        public Guid uitgever_id { get; set; }
+        public Guid schrijver_id { get; set; }
+        public Guid tekenaar_id { get; set; }
+        public string afbeelding { get; set; }
+        public string beschrijving { get; set; }
+        public bool verified { get; set; }
 }
