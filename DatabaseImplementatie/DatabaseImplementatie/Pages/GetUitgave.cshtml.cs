@@ -9,6 +9,8 @@ namespace DatabaseImplementatie.Pages;
 
 public class GetUitgave : PageModel
 {
+    [BindProperty] public string comicPage { get; set; }
+    
     public void OnGet()
     {
         UitgaveList = new uitgaveRepository().GetAll();
@@ -25,5 +27,9 @@ public class GetUitgave : PageModel
     }
 
     public IEnumerable<UitgavePak> UitgaveList { get; set; }
-    
+
+    public void OnPostGetComic()
+    {
+        
+    }
 }
