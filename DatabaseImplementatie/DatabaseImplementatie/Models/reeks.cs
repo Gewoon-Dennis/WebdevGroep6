@@ -2,6 +2,6 @@
 
 public class reeks
 {
-    public Guid C_reeks_id { get; set; }
-    public string C_reeks_naam { get; set; }
+    public Guid reeks_id { get; set; }
+    public string reeks_naam { get; set; }
 }
