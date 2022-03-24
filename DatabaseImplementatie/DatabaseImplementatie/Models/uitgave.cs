@@ -1,6 +1,4 @@
-﻿using System.Net.Mime;
-
-namespace DatabaseImplementatie.Models;
+﻿namespace DatabaseImplementatie.Models;
 
 public class uitgave
 {
@@ -17,7 +15,7 @@ public class uitgave
         public Guid uitgever_id { get; set; }
         public Guid schrijver_id { get; set; }
         public Guid tekenaar_id { get; set; }
-        public byte[] afbeelding { get; set; }
+        public string afbeelding { get; set; }
         public string beschrijving { get; set; }
         public bool verified { get; set; }
 }
