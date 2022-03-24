@@ -13,10 +13,8 @@ public class UitgavePak
         public string afmetingen { get; set; }
         public string reeks_naam { get; set; }
         public string uitgever_naam { get; set; }
-        public string schrijvernaam { get; set; }
-        public string tekennaarnaam { get; set; }
-        public int isSchrijver { get; set; }
-        public int isTekenaar { get; set; }
+        public string tekennaar_naam { get; set; }
+        public string schrijver_naam { get; set; }
         public string afbeelding { get; set; }
         public int verified = 0;
 }

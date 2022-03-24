@@ -6,16 +6,19 @@
 }
 
 @{
-    foreach (var item in Model.ResultaatArtiest)
+    foreach (var schrijver in Model.SchrijverList)
     {
-        string url = @item.wikipedia;
-        <li>Naam: @item.naam</li>
-        <li>Boeken geschreven: @item.schrijver</li>
-        <li>Boeken getekent: @item.tekenaar</li>
-        <li>Wikipedia: @item.wikipedia</li>
-        <li>Geboortedatum: @item.geboortedatum</li>
-        <hr/>
-        
+        <li>Naam: @schrijver.schrijver_naam</li>
+        <li>Geslacht: @schrijver.geslacht</li>
+        <li>Wikipedia: @schrijver.wikipedia_schrijver</li>
+        <li>Geboortedatum: @schrijver.geboortedatum</li>
     }
-    
+
+    foreach (var tekenaar in Model.TekenaarList)
+    {
+        <li>Naam: @tekenaar.tekenaar_naam</li>
+        <li>Geslacht: @tekenaar.geslacht</li>
+        <li>Wikipedia: @tekenaar.wikipedia_tekenaar</li>
+        <li>Geboortedatum: @tekenaar.geboortedatum</li>
+    }
 }

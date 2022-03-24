@@ -12,9 +12,14 @@ public class artiestRepository
     {
         return new MySqlConnection(connectionString);
     }
-    public IEnumerable<artiest> GetAll()
+    public IEnumerable<tekenaar> GetTekenaars()
     {
         using var connection = Connect();
-        return Connect().Query<artiest>("SELECT * FROM artiest");
+        return Connect().Query<tekenaar>("SELECT * FROM tekenaar");
+    }
+    public IEnumerable<schrijver> GetSchrijvers()
+    {
+        using var connection = Connect();
+        return Connect().Query<schrijver>("SELECT * FROM schrijver");
     }
 } 

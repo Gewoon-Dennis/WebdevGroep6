@@ -15,12 +15,12 @@ public class uitgaveRepository
     public IEnumerable<UitgavePak> GetAll()
     {
         using var connection = Connect();
-        return Connect().Query<UitgavePak>(@"SELECT uitgave_titel, isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, artiest_naam, rol_schrijver, rol_tekenaar, afbeelding, verified
-        FROM uitgave
-        INNER JOIN heeft USING(uitgave_id)
-        INNER JOIN reeks USING (reeks_id)
-        INNER JOIN uitgever USING (uitgever_id)
-        INNER JOIN artiest USING (artiest_id);");
+        return Connect().Query<UitgavePak>(@"SELECT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified
+                FROM uitgave
+                INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id);");
     }
 
     public IEnumerable<uitgave> GetAZ()
@@ -34,19 +34,9 @@ public class uitgaveRepository
         return Connect().Query<uitgave>("SELECT * FROM uitgave Order BY reeks ");
     }
 
-    public void AddData(string titel, long isbn, int druk, string taal, int jaar, int blz, long barcode, int expliciet,
-        string afmetingen, string reeks, string uitgever)
+    public void AddData(uitgave Uitgave, reeks Reeks, uitgever Uitgever,tekenaar Tekenaar, schrijver Schrijver)
     {
-        string sql =
-            "INSERT INTO uitgave (titel, isbn, druk, taal, jaar, blz, barcode, expliciet, afmetingen, reeks, uitgever) VALUES (@titel, @isbn, @druk, @taal, @jaar, @blz, @barcode, @expliciet, @afmetingen, @reeks, @uitgever);";
         using var connection = Connect();
-
-        var affectedRows = connection.Execute(sql,
-            new
-            {
-                titel = titel, isbn = isbn, druk = druk, taal = taal, jaar = jaar, blz = blz, barcode = barcode,
-                expliciet = expliciet, afmetingen = afmetingen, reeks = reeks, uitgever = uitgever
-            });
     }
     
 }

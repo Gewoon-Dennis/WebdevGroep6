@@ -8,8 +8,10 @@ public class GetArtists : PageModel
 {
     public void OnGet()
     {
-        ResultaatArtiest = new artiestRepository().GetAll();
+        SchrijverList = new artiestRepository().GetSchrijvers();
+        TekenaarList = new artiestRepository().GetTekenaars();
     }
     
-    public IEnumerable<artiest> ResultaatArtiest { get; set; }
+    public IEnumerable<schrijver> SchrijverList { get; set; }
+    public IEnumerable<tekenaar> TekenaarList { get; set; }
 }
