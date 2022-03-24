@@ -15,6 +15,6 @@ public class GetArtists : PageModel
         TekenaarList = new artiestRepository().GetTekenaars();
     }
     
-    public IEnumerable<schrijver> SchrijverList { get; set; }
-    public IEnumerable<tekenaar> TekenaarList { get; set; }
+    public IEnumerable<schrijverPak> SchrijverList { get; set; }
+    public IEnumerable<tekenaarPak> TekenaarList { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿namespace DatabaseImplementatie.Models;
 
-public class C_uitgave
+public class uitgave
 {
         public Guid uitgave_id { get; set; }
         public string uitgave_titel { get; set; }
