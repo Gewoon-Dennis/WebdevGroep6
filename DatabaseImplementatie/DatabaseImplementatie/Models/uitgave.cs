@@ -9,12 +9,13 @@ public class uitgave
         public int druk { get; set; }
         public string taal { get; set; }
         public int blz { get; set; }
-        public int expliciet { get; set; }
+        public bool expliciet { get; set; }
         public string afmetingen { get; set; }
         public Guid reeks_id { get; set; }
         public Guid uitgever_id { get; set; }
         public Guid schrijver_id { get; set; }
         public Guid tekennaar_id { get; set; }
         public string afbeelding { get; set; }
-        public int verified = 0;
+        public string beschrijving { get; set; }
+        public bool verified = false;
 }
