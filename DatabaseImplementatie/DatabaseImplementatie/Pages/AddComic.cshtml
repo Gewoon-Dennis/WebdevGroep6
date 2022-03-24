@@ -7,8 +7,188 @@
 <link rel="stylesheet" href="~/css/cardcss.css" asp-append-version="true"/>
 
 <div>
-<form method="post">
+    <h1 style="text-align: center">Add a comic!</h1>
+    <hr/>
+    <form method="post">
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>Strip naam: </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="titel" placeholder="Strip naam" asp-for="NieuweUitgave.C_uitgave_titel"/>
+            </div>
+            <div class="form-group row" id="spacingex">
+                <div class="col-2">
+                    <label>Beschrijving: </label>
+                </div>
+                <div class="col-4">
+                    <textarea type="text" id="beschrijving" placeholder="Beschrijving" maxlength="300" asp-for="NieuweUitgave.C_beschrijving"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>ISBN: </label>
+            </div>
+            <div class="col-4">
+                <input type="number" id="ISBN" placeholder="ISBN" asp-for="NieuweUitgave.C_isbn"/>
 
-</form>
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>Uitgave jaar: </label>
+            </div>
+            <div class="col-4">
+                <input type="date" id="uitgavejaar" placeholder="Uitgave Jaar" asp-for="NieuweUitgave.C_uitgavejaar"/>
 
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>Druk: </label>
+            </div>
+            <div class="col-4">
+                <input type="number" id="Druk" placeholder="Druk" asp-for="NieuweUitgave.C_druk"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>Taal: </label>
+            </div>
+            <div class="col-4">
+                <input type="text" maxlength="20" id="taal" placeholder="Taal" asp-for="NieuweUitgave.C_taal"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>Aantal bladzijden </label>
+            </div>
+            <div class="col-4">
+                <input type="number" id="blz" placeholder="Aantal blz" asp-for="NieuweUitgave.C_blz"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>Expliciet </label>
+            </div>
+            <div class="col-4">
+                <input type="checkbox" id="blz" placeholder="expliciet" asp-for="NieuweUitgave.C_expliciet"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>Afmetingen </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="afmetingen" asp-for="NieuweUitgave.C_afmetingen"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>afbeelding </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="afbeelding url" asp-for="NieuweUitgave.C_afbeelding"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>tekenaar </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="tekenaarnaam" asp-for="TekenaarNaam.C_tekenaar_naam"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>tekenaar jarig </label>
+            </div>
+            <div class="col-4">
+                <input type="date" id="blz" placeholder="jarig" asp-for="TekenaarNaam.C_geboortedatum"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>tekenaar gender </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="gender" asp-for="TekenaarNaam.C_geslacht"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>tekenaar wiki </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="wiki link" asp-for="TekenaarNaam.C_wikipedia_tekenaar"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>schrijver </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="schrijver" asp-for="SchrijverNaam.C_schrijver_naam"/>
+
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>schrijver jarig </label>
+            </div>
+            <div class="col-4">
+                <input type="date" id="blz" placeholder="jarig" asp-for="SchrijverNaam.C_geboortedatum"/>
+    
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>schrijver gender </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="gender" asp-for="SchrijverNaam.C_geslacht"/>
+    
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>schrijver wiki </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="Wiki link" asp-for="SchrijverNaam.C_wikipedia_schrijver"/>
+    
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>reeksnaam </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="reeksnaam" asp-for="ReeksNaam.C_reeks_naam"/>
+    
+            </div>
+        </div>
+        <div class="form-group row" id="spacingex">
+            <div class="col-2">
+                <label>uitgevernaam </label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="blz" placeholder="uitgevernaam" asp-for="UitgeverNaam.C_uitgever_naam"/>
+    
+            </div>
+        </div>
+        <button type="submit" class="btn-primary">Add Comic</button>
+    </form>
 </div>
