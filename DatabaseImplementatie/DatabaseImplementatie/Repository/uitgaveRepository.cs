@@ -23,15 +23,23 @@ public class uitgaveRepository
                 INNER JOIN tekenaar USING (tekenaar_id);");
     }
 
-    public IEnumerable<uitgave> GetAZ()
+    public IEnumerable<UitgavePak> GetAZ()
     {
         using var connection = Connect();
-        return Connect().Query<uitgave>("SELECT * FROM uitgave Order BY titel ");
+        return Connect().Query<UitgavePak>(@"SELECT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+INNER JOIN uitgever USING (uitgever_id)
+INNER JOIN schrijver USING (schrijver_id)
+INNER JOIN tekenaar USING (tekenaar_id)
+order by uitgave_titel;");
     }
-    public IEnumerable<uitgave> GetReeks()
+    public IEnumerable<UitgavePak> GetReeks()
     {
         using var connection = Connect();
-        return Connect().Query<uitgave>("SELECT * FROM uitgave Order BY reeks ");
+        return Connect().Query<UitgavePak>(@"SELECT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+INNER JOIN uitgever USING (uitgever_id)
+INNER JOIN schrijver USING (schrijver_id)
+INNER JOIN tekenaar USING (tekenaar_id)
+order by reeks_naam;");
     }
 
     public void AddData(uitgave Uitgave, reeks Reeks, uitgever Uitgever,tekenaar Tekenaar, schrijver Schrijver)

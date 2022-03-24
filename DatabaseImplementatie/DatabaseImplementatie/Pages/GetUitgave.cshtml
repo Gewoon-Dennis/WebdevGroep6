@@ -18,6 +18,7 @@
 @{
     foreach (var comic in Model.UitgaveList)
     {
+        
             <div class="card mb-3" style="max-width: 45%; padding: unset;">
                 <div class="row g-0">
                     <div class="col-4">
@@ -41,7 +42,7 @@
                             <div class="a">
                                 <p class="card-text"><small class="text-muted">Druk: @comic.druk</small></p>
                                 <input type="hidden" value="@comic.uitgave_id"/>
-                                <a href="ComicInfo\" class="stretched-link text-decoration-none" asp-page-handler="GetComic"></a>
+                                <a class="stretched-link text-decoration-none" asp-page="ComicInfo" asp-route="@comic.uitgave_id"></a>
                             </div>
                         </div>
                     </div>
