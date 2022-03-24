@@ -34,5 +34,7 @@ public class AddComic : PageModel
     public void OnPost()
     {
         new uitgaveRepository().AddData(titel, isbn, druk, taal, jaar, blz, barcode, expliciet, afmetingen, reeks, uitgever);
+
+        
     }
 }
