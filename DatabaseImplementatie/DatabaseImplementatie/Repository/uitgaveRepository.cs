@@ -18,7 +18,7 @@ public class uitgaveRepository
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-            @"SELECT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified
                 FROM uitgave
                 INNER JOIN reeks USING (reeks_id)
                 INNER JOIN uitgever USING (uitgever_id)
@@ -30,7 +30,7 @@ public class uitgaveRepository
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-            @"SELECT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+            @"SELECT DISTINCT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
 INNER JOIN uitgever USING (uitgever_id)
 INNER JOIN schrijver USING (schrijver_id)
 INNER JOIN tekenaar USING (tekenaar_id)
@@ -41,7 +41,7 @@ order by uitgave_titel;");
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-            @"SELECT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+            @"SELECT DISTINCT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
 INNER JOIN uitgever USING (uitgever_id)
 INNER JOIN schrijver USING (schrijver_id)
 INNER JOIN tekenaar USING (tekenaar_id)
