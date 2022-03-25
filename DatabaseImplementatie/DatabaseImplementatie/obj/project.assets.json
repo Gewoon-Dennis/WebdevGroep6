@@ -883,20 +883,22 @@
   "packageFolders": {
     "C:\\Users\\melle\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\arcade project\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+      "projectUniqueName": "D:\\School\\nhlstenden\\arcadegameproject\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
       "projectName": "DatabaseImplementatie",
-      "projectPath": "G:\\arcade project\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+      "projectPath": "D:\\School\\nhlstenden\\arcadegameproject\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
       "packagesPath": "C:\\Users\\melle\\.nuget\\packages\\",
-      "outputPath": "G:\\arcade project\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\",
+      "outputPath": "D:\\School\\nhlstenden\\arcadegameproject\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\melle\\AppData\\Roaming\\NuGet\\NuGet.Config",

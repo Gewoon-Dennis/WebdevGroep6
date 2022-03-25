@@ -18,7 +18,7 @@ public class uitgaveRepository
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-            @"SELECT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam,/* afbeelding*/ schrijver_naam, verified
+            @"SELECT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, afbeelding, schrijver_naam, verified
                 FROM uitgave
                 INNER JOIN reeks USING (reeks_id)
                 INNER JOIN uitgever USING (uitgever_id)
