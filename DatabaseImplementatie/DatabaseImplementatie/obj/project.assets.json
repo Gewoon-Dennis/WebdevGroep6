@@ -881,27 +881,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\melle\\.nuget\\packages\\": {},
+    "C:\\Users\\denni\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\School\\nhlstenden\\arcadegameproject\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+      "projectUniqueName": "C:\\Users\\denni\\Documents\\GitHub\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
       "projectName": "DatabaseImplementatie",
-      "projectPath": "D:\\School\\nhlstenden\\arcadegameproject\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
-      "packagesPath": "C:\\Users\\melle\\.nuget\\packages\\",
-      "outputPath": "D:\\School\\nhlstenden\\arcadegameproject\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\",
+      "projectPath": "C:\\Users\\denni\\Documents\\GitHub\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\DatabaseImplementatie.csproj",
+      "packagesPath": "C:\\Users\\denni\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\denni\\Documents\\GitHub\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
       ],
       "configFilePaths": [
-        "C:\\Users\\melle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\denni\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -956,7 +954,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
