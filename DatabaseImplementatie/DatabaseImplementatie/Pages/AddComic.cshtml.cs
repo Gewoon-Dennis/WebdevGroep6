@@ -13,7 +13,7 @@ public class AddComic : PageModel
     [BindProperty] public tekenaar TekenaarNaam { get; set; }
     [BindProperty] public schrijver SchrijverNaam { get; set; }
   
-    public void OnPost()
+    public RedirectToPageResult OnPost()
     {
         NieuweUitgave.uitgave_id = Guid.NewGuid();
         ReeksNaam.reeks_id = Guid.NewGuid();
@@ -27,6 +27,12 @@ public class AddComic : PageModel
         NieuweUitgave.tekenaar_id = TekenaarNaam.tekenaar_id;
         NieuweUitgave.verified = false;
         
-        new uitgaveRepository().AddUitgave(NieuweUitgave, ReeksNaam, UitgeverNaam, TekenaarNaam, SchrijverNaam);
+        bool uitgave = new uitgaveRepository().AddUitgave(NieuweUitgave, ReeksNaam, UitgeverNaam, TekenaarNaam, SchrijverNaam);
+        if (uitgave)
+        {
+            return new RedirectToPageResult("AddComic");
+        }
+
+        return null;
     }
 }
