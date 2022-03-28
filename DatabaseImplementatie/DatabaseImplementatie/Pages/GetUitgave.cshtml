@@ -34,13 +34,22 @@
                             <p class="card-text">Reeks: @comic.reeks_naam</p>
                             <div class="a">
                                 <p class="card-text"><small class="text-muted">Druk: @comic.druk</small></p>
-                                <input type="hidden" value="@comic.uitgave_id"/>
                                 
+                            </div>
+                            <div class="card-body col-md-12x">
+                                @if (Login.LoggedIn)
+                                {
+                                    <form method="post">
+                                        <input type="hidden" value="@comic.uitgave_id" asp-for="Id"/>
+                                        <button class="btn btn-dark" type="submit" asp-page-handler="Collectie">Deze heb ik</button>
+                                    </form>
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            }
-            }
-        </div>
+    }
+    
+}
+</div>

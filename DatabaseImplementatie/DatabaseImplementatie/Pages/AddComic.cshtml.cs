@@ -13,6 +13,15 @@ public class AddComic : PageModel
     [BindProperty] public tekenaar TekenaarNaam { get; set; }
     [BindProperty] public schrijver SchrijverNaam { get; set; }
   
+    public RedirectToPageResult OnGet()
+    {
+        if (Login.LoggedIn == false)
+        {
+            return new RedirectToPageResult("Login");
+        }
+       
+        return null;
+    }
     public void OnPost()
     {
         NieuweUitgave.uitgave_id = Guid.NewGuid();
