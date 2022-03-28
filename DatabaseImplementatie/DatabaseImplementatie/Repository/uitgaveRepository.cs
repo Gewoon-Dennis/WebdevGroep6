@@ -30,38 +30,22 @@ public class uitgaveRepository
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-<<<<<<< HEAD
             @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
                 INNER JOIN uitgever USING (uitgever_id)
                 INNER JOIN schrijver USING (schrijver_id)
                 INNER JOIN tekenaar USING (tekenaar_id)
                 order by uitgave_titel;");
-=======
-            @"SELECT DISTINCT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
-INNER JOIN uitgever USING (uitgever_id)
-INNER JOIN schrijver USING (schrijver_id)
-INNER JOIN tekenaar USING (tekenaar_id)
-order by uitgave_titel;");
->>>>>>> 545bc2f1b470170409ab05a7381e7e5b4892ad90
     }
 
     public IEnumerable<UitgavePak> GetReeks()
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-<<<<<<< HEAD
             @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
                 INNER JOIN uitgever USING (uitgever_id)
                 INNER JOIN schrijver USING (schrijver_id)
                 INNER JOIN tekenaar USING (tekenaar_id)
                 order by reeks_naam;");
-=======
-            @"SELECT DISTINCT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
-INNER JOIN uitgever USING (uitgever_id)
-INNER JOIN schrijver USING (schrijver_id)
-INNER JOIN tekenaar USING (tekenaar_id)
-order by reeks_naam;");
->>>>>>> 545bc2f1b470170409ab05a7381e7e5b4892ad90
     }
 
     public bool AddToCollection(bezit Bezit)

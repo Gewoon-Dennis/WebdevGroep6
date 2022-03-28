@@ -13,7 +13,6 @@ public class AddComic : PageModel
     [BindProperty] public tekenaar TekenaarNaam { get; set; }
     [BindProperty] public schrijver SchrijverNaam { get; set; }
   
-<<<<<<< HEAD
     public RedirectToPageResult OnGet()
     {
         if (Login.LoggedIn == false)
@@ -24,9 +23,6 @@ public class AddComic : PageModel
         return null;
     }
     public void OnPost()
-=======
-    public RedirectToPageResult OnPost()
->>>>>>> 545bc2f1b470170409ab05a7381e7e5b4892ad90
     {
         NieuweUitgave.uitgave_id = Guid.NewGuid();
         ReeksNaam.reeks_id = Guid.NewGuid();
@@ -40,12 +36,6 @@ public class AddComic : PageModel
         NieuweUitgave.tekenaar_id = TekenaarNaam.tekenaar_id;
         NieuweUitgave.verified = false;
         
-        bool uitgave = new uitgaveRepository().AddUitgave(NieuweUitgave, ReeksNaam, UitgeverNaam, TekenaarNaam, SchrijverNaam);
-        if (uitgave)
-        {
-            return new RedirectToPageResult("AddComic");
-        }
-
-        return null;
+        new uitgaveRepository().AddUitgave(NieuweUitgave, ReeksNaam, UitgeverNaam, TekenaarNaam, SchrijverNaam);
     }
 }
