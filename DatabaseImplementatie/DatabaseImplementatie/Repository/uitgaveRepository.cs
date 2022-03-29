@@ -62,6 +62,19 @@ public class uitgaveRepository
                 INNER JOIN tekenaar USING (tekenaar_id)
                 order by reeks_naam;");
     }
+    
+    //collection search
+    public IEnumerable<UitgavePak> ZoekUitgave(string searchTerm)
+    {
+        string Zoekterm = "%" + searchTerm + "%";
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE uitgave_titel LIKE @search", new{@search = Zoekterm});
+    }
 
     //collection functions
     public bool AddToCollection(bezit Bezit)

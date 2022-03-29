@@ -10,9 +10,15 @@ public class Register : PageModel
     [BindProperty] public Gebruiker Nieuwegebruiker { get; set; }
     [BindProperty] public string WachtwoordCheck { get; set; }
     [BindProperty] public bool PasswordSame { get; set; } = true;
-    public void OnGet()
+    public RedirectToPageResult OnGet()
     {
         
+        if (Login.LoggedIn)
+        {
+            return new RedirectToPageResult("Account");
+        }
+
+        return null;
     }
 
     public IActionResult OnPostRegister()

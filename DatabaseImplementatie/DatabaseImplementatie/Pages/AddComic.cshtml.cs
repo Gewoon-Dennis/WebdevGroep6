@@ -31,10 +31,10 @@ public class AddComic : PageModel
     public void OnPost()
     {
         var schrijverID = Request.Form["schrijverr"];
-        NieuweUitgave.uitgave_id = Guid.NewGuid();
-        ReeksNaam.reeks_id = Guid.NewGuid();
-        UitgeverNaam.uitgever_id = Guid.NewGuid();
-        TekenaarNaam.tekenaar_id = Guid.NewGuid();
+        NieuweUitgave.uitgave_id = Guid.NewGuid().ToString();
+        ReeksNaam.reeks_id = Guid.NewGuid().ToString();
+        UitgeverNaam.uitgever_id = Guid.NewGuid().ToString();
+        TekenaarNaam.tekenaar_id = Guid.NewGuid().ToString();
         if (schrijverID == "0000")
         {
             SchrijverNaam.schrijver_id = Guid.NewGuid().ToString();
@@ -51,5 +51,6 @@ public class AddComic : PageModel
         NieuweUitgave.verified = false;
         
         new uitgaveRepository().AddUitgave(NieuweUitgave, ReeksNaam, UitgeverNaam, TekenaarNaam, SchrijverNaam);
+        schrijverList = new artiestRepository().GetSchrijvers();
     }
 }

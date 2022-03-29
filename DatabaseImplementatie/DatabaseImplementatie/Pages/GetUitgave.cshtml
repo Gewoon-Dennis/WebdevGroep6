@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="~/css/cardcss.css" asp-append-version="true"/>
 
 <form method="post">
-    <button class="btn btn-dark" type="submit" asp-page-handler="AZ">A-Z</button>
+      Vul stripnaam in: <input type="text" asp-for="@Model.search" placeholder="Zoek strip..."/>
+      <button class="btn btn-primary" type="submit" id="Vind" asp-page-handler="ZoekComic">Zoek Comic</button>
+      <button class="btn btn-dark" type="submit" asp-page-handler="AZ">A-Z</button>
     <button class="btn btn-dark" type="submit" asp-page-handler="Reeks">Reeks</button>
 </form>
 <br/>
@@ -30,7 +32,7 @@
                             <h5 class="card-title">@comic.uitgave_titel</h5>
                             <p class="card-text">Uitgever: @comic.uitgever_naam</p>
                             <p class="card-text">Jaar: @comic.uitgavejaar</p>
-                            @if (comic.expliciet == true)
+                            @if (comic.expliciet)
                             {
                                 <p class="card-text">Expliciet: Ja</p>
                             }

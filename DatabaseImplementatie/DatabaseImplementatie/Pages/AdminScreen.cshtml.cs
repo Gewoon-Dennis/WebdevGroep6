@@ -33,18 +33,21 @@ public class AdminScreen : PageModel
     public void OnPostZoekGebruiker()
     {
         GebruikerList = new gebruikerRepository().GetUserRole(GebruikerMail);
+        UitgaveList = new uitgaveRepository().GetUnverified();
     }
 
     public void OnPostPromote()
     {
         bool Promote = new gebruikerRepository().PromoteUser(GerbuikerId);
         GebruikerList = new gebruikerRepository().GetUserRole(GebruikerMail);
+        UitgaveList = new uitgaveRepository().GetUnverified();
     }
 
     public void OnPostDemote()
     {
         bool Demote = new gebruikerRepository().DemoteUser(GerbuikerId);
         GebruikerList = new gebruikerRepository().GetUserRole(GebruikerMail);
+        UitgaveList = new uitgaveRepository().GetUnverified();
     }
 
     public void OnPostVerify()

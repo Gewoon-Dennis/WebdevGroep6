@@ -8,6 +8,7 @@ namespace DatabaseImplementatie.Pages;
 
 public class IndexModel : PageModel
 {
+    [BindProperty] public string search { get; set; }
     private readonly ILogger<IndexModel> _logger;
 
     public IndexModel(ILogger<IndexModel> logger)
@@ -15,9 +16,10 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
-    public void OnPost()
+    public RedirectToPageResult OnPostZoekComic()
     {
-        
+        HttpContext.Session.SetString("ZoekTerm", search);
+        return new RedirectToPageResult("GetUitgave");
     }
 
 }

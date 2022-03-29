@@ -136,9 +136,12 @@
                 <option selected value="8">Al bekende schrijvers</option>
 
                 @{
-                    foreach (var schrijver in Model.schrijverList)
+                    if (Model.schrijverList == null)
                     {
-                        <option value="@schrijver.schrijver_id"> @schrijver.schrijver_naam </option>
+                        foreach (var schrijver in Model.schrijverList)
+                        {
+                            <option value="@schrijver.schrijver_id"> @schrijver.schrijver_naam </option>
+                        }
                     }
                     <script>
                     
