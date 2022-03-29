@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ix/dvJBJWIQiJLkUX/LhLVp8PbNqrEKov4xb/eVecgI=",
+  "Hash": "JDMB/dsZfxSU5aPVcUYeumh8PDlqfd+HTUH5jZgINTo=",
   "Source": "DatabaseImplementatie",
   "BasePath": "_content/DatabaseImplementatie",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "G:\\arcade project\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DatabaseImplementatie.bundle.scp.css"
-    },
-    {
-      "Identity": "G:\\arcade project\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\wwwroot\\css\\cardcss.css",
-      "SourceId": "DatabaseImplementatie",
-      "SourceType": "Discovered",
-      "ContentRoot": "G:\\arcade project\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\wwwroot\\",
-      "BasePath": "_content/DatabaseImplementatie",
-      "RelativePath": "css/cardcss.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\cardcss.css"
     },
     {
       "Identity": "G:\\arcade project\\WebdevGroep6\\DatabaseImplementatie\\DatabaseImplementatie\\wwwroot\\css\\site.css",
