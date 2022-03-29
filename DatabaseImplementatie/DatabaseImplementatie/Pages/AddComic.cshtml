@@ -101,6 +101,8 @@
             </div>
         </div>
         <hr/>
+        
+        
         <div class="form-group row" id="spacingex">
             <div class="col-2">
                 <label>tekenaar: </label>
@@ -121,15 +123,6 @@
         </div>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
-                <label>tekenaar gender: </label>
-            </div>
-            <div class="col-4">
-                <input type="text" id="blz" placeholder="gender" asp-for="TekenaarNaam.geslacht"/>
-
-            </div>
-        </div>
-        <div class="form-group row" id="spacingex">
-            <div class="col-2">
                 <label>tekenaar wiki: </label>
             </div>
             <div class="col-4">
@@ -139,6 +132,23 @@
         </div>
         <hr/>
         <div class="form-group row" id="spacingex">
+            <select name="schrijverr" class="form-select form-select-sm" >
+                <option selected>Al bekende schrijvers</option>
+
+                @{
+                    foreach (var schrijver in Model.schrijverList)
+                    {
+                        <option value= "@schrijver.schrijver_id.ToString()"> @schrijver.schrijver_naam </option>
+                    }
+                    <script>
+                    
+                    </script>
+                }
+                
+            </select>
+        </div>
+        
+        <div class="form-group row" id="spacingex">
             <div class="col-2">
                 <label>schrijver </label>
             </div>
@@ -147,24 +157,7 @@
 
             </div>
         </div>
-        <div class="form-group row" id="spacingex">
-            <div class="col-2">
-                <label>schrijver jarig </label>
-            </div>
-            <div class="col-4">
-                <input type="date" id="blz" placeholder="jarig" asp-for="SchrijverNaam.geboortedatum"/>
-    
-            </div>
-        </div>
-        <div class="form-group row" id="spacingex">
-            <div class="col-2">
-                <label>schrijver gender </label>
-            </div>
-            <div class="col-4">
-                <input type="text" id="blz" placeholder="gender" asp-for="SchrijverNaam.geslacht"/>
-    
-            </div>
-        </div>
+        
         <div class="form-group row" id="spacingex">
             <div class="col-2">
                 <label>schrijver wiki </label>
