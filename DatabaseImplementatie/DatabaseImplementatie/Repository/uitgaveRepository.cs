@@ -30,24 +30,51 @@ public class uitgaveRepository
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-            @"SELECT DISTINCT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
-INNER JOIN uitgever USING (uitgever_id)
-INNER JOIN schrijver USING (schrijver_id)
-INNER JOIN tekenaar USING (tekenaar_id)
-order by uitgave_titel;");
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                order by uitgave_titel;");
     }
 
     public IEnumerable<UitgavePak> GetReeks()
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-            @"SELECT DISTINCT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
-INNER JOIN uitgever USING (uitgever_id)
-INNER JOIN schrijver USING (schrijver_id)
-INNER JOIN tekenaar USING (tekenaar_id)
-order by reeks_naam;");
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                order by reeks_naam;");
     }
 
+    public bool AddToCollection(bezit Bezit)
+    {
+        using var connection = Connect();
+        int AddToCollection = connection.Execute(
+            @"INSERT INTO bezit (gebruiker_id, uitgave_id, gelezen, kwaliteit_boek, kwaliteit_verhaal) 
+            VALUES (@gebruiker_id, @uitgave_id, @gelezen, @kwaliteit_boek, @kwaliteit_verhaal)", Bezit);
+        if (AddToCollection > 0)
+        {
+           return true; 
+        }
+
+        return false;
+    }
+
+    public IEnumerable<UitgavePak> GetCollectie(string Gebruiker_Id)
+    {
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(@"SELECT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified
+                        FROM bezit
+                        INNER JOIN uitgave USING (uitgave_id)
+                        INNER JOIN reeks USING (reeks_id)
+                        INNER JOIN uitgever USING (uitgever_id)
+                        INNER JOIN schrijver USING (schrijver_id)
+                        INNER JOIN tekenaar USING (tekenaar_id)
+                        WHERE gebruiker_id = @gebruiker_id", new {@gebruiker_id = Gebruiker_Id});
+    }
+    
     public bool AddUitgave(uitgave UitGave, reeks Reeks, uitgever Uitgever, tekenaar Tekenaar, schrijver Schrijver)
     {
         using var connection = Connect();

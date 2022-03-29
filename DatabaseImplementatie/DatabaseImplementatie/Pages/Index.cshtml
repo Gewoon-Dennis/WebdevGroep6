@@ -3,11 +3,184 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<link rel="stylesheet" href="~/css/index.css" asp-append-version="true"/>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-1 h-0" >
+  
+  <!-- Carousel wrapper -->
+  <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+      <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+      <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
+    </ol>
+
+    <!-- Inner -->
+    <div class="carousel-inner h-0">
+      <!-- Single item -->
+      <div class="carousel-item active">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white text-center mt-2 mb-2">
+              <h1 class="mb-3">Het Comicparadijs</h1>
+              <h5 class="mb-4">De grootste database voor alle stripboeken!</h5>
+              <a
+                class="btn btn-primary btn-lg m-2"
+                asp-area=""
+                asp-page="/GetUitgave"
+                role="button"
+                rel="nofollow"
+                target="_blank"
+              >Zie uitgaves</a>
+              <a
+                class="btn btn-outline-light btn-lg m-2"
+                asp-area=""
+                asp-page="/Register"
+                target="_blank"
+                role="button"
+              >Registreer nu!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+          
+    </div>
+    <!-- Inner -->
+
+    <!-- Controls -->
+    <!-- <a class="carousel-control-prev h-0" href="#introCarousel" role="button" data-mdb-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next h-0" href="#introCarousel" role="button" data-mdb-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a> -->
+  </div>
+      
 </div>
 
+ <div class="main-search-input-wrap">
+     <div class="main-search-input fl-wrap">
+         <div class="main-search-input-item"> <input type="text" value="" placeholder="Search Comics..."> </div> <button class="main-search-button">Search</button>
+     </div>
+ </div>
 
+<!--Main layout-->
+    <main class="mt-5">
+      <div class="container">
+        
 
+        <hr class="my-5" />
+        
+        
+        <!--Section: Content-->
+        <section class="text-center">
+          <h4 class="mb-5"><strong>Laatst toegevoegd:</strong></h4>
+          
+          
+          
+          
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+              
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://1.bp.blogspot.com/-hrtqQnp1x80/YN70GdM63hI/AAAAAAAAMGw/tVP4-Tcx82EG_LYisnJpBosiz0fsJLm0gCLcBGAsYHQ/s2048/Donald%2BDuck%2B27-2021.jpg"
+                    class="img-fluid"/>
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Donald Duck 27-2021</h5>
+                  <p class="card-text">
+                    "Vorige week al aangekondigd, deze week te vinden op pagina 5 t/m 14 van de nieuwe Donald Duck (nr 27-2021), 
+                    Donald Duck in  'De ballenjongens van Wimbleduck'. 
+                    Een verhaal dat ik samen schreef met collega Paul Hoogma."
+                  </p>
+                  <a href="#!" class="btn btn-secondary btn-lg">Bekijk</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://blogger.googleusercontent.com/img/a/AVvXsEjmtDuLIMnsjlF0lQ-vjnS_IvNZNz-p5nLTxURF9luGuMKwbXqt7EStCsPCTlc06V295aBnRNe2qyp3bZw-FviZDgi-6ojCw0H-O-jknk5nCOXoi_-74tBmkOnptzPThLeUPHntmAknrusiDOVRPn5z2obIYyDnW4HpOYUZZ_y81dqIZ0eGRhKayEZubw=s3098"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Donald Duck 1-2022</h5>
+                  <p class="card-text">
+                    "Het is de laatste dag van het jaar, maar de eerste bladen van 2022 liggen al in de winkel. Waaronder de eerste Donald Duck van het nieuwe jaar. 
+                    En dat is niet zomaar een nummer. 
+                    Dit is was Sander Dieben er op zijn Facebookpagina al eerder over schreef."
+                  </p>
+                  <a href="#!" class="btn btn-secondary btn-lg">Bekijk</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="http://3.bp.blogspot.com/_x6A1xP8NXmo/TIKVHtWEhjI/AAAAAAAAD4c/-le040N0l2o/s1600/ZZT_COVER.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">De Zuidzee Trilogie</h5>
+                  <p class="card-text">
+                    Oplage 100. Hardcover met linnen rug. 
+                    De drie zuidzee verhalen, voorzien van een nieuwe voorplaat, maar nu dus voor het eerst, 
+                    gedrieën in EEN, lekker dikke, linnen band.
+                  </p>
+                  <a href="#!" class="btn btn-secondary btn-lg">Bekijk</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--Section: Content-->
+
+        <hr class="my-5" />
+        
+        <!--Section: Content-->
+                <section>
+                  <div class="row">
+                    <div class="col-md-6 gx-5 mb-4">
+                      <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                        <img src="https://2.bp.blogspot.com/Wozwshz0ZsU-VDyTbYg-CGaTrTPvalzAl3_It0kJULNsYMWHNuzNEwq447qAGCX-iSjBveZcPfprhHPf8Z-ifEp9vNbMTWJH0XW3SglmDfCfCuiOpJLweAZLbBGCoDYI8AcIRbZEvw=s1600" class="img-fluid" />
+                        <a href="#!">
+                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                      </div>
+                    </div>
+        
+                    <div class="col-md-6 gx-5 mb-4">
+                      <h4><strong>De database</strong></h4>
+                      <p class="text-muted">
+                        De database van ComicParadise heeft meer dan 1000 stripboeken.
+
+                      </p>
+                    </div>
+                  </div>
+                </section>
+                <!--Section: Content-->
+
+      </div>
+    </main>
+    <!--Main layout-->

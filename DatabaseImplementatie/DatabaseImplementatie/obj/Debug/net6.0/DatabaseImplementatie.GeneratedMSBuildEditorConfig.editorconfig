@@ -31,7 +31,15 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taWNJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[C:/Users/Dennis/Documents/GitHub/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/ComicToCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taWNUb0NvbGxlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dennis/Documents/GitHub/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Error.cshtml]
+=======
 [C:/Users/denni/Documents/GitHub/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Error.cshtml]
+>>>>>>> 545bc2f1b470170409ab05a7381e7e5b4892ad90
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
