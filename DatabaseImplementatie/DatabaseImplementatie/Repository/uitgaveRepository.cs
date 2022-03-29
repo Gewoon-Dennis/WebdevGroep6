@@ -14,6 +14,7 @@ public class uitgaveRepository
         return new MySqlConnection(connectionString);
     }
 
+    //get fucntions
     public IEnumerable<UitgavePak> GetAll()
     {
         using var connection = Connect();
@@ -48,6 +49,7 @@ public class uitgaveRepository
                 order by reeks_naam;");
     }
 
+    //collection functions
     public bool AddToCollection(bezit Bezit)
     {
         using var connection = Connect();
@@ -62,10 +64,10 @@ public class uitgaveRepository
         return false;
     }
 
-    public IEnumerable<UitgavePak> GetCollectie(string Gebruiker_Id)
+    public IEnumerable<collectie> GetCollectie(string Gebruiker_Id)
     {
         using var connection = Connect();
-        return Connect().Query<UitgavePak>(@"SELECT uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified
+        return Connect().Query<collectie>(@"SELECT uitgave_id, uitgave_titel, uitgavejaar, druk, taal, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam, gelezen, kwaliteit_boek, kwaliteit_verhaal
                         FROM bezit
                         INNER JOIN uitgave USING (uitgave_id)
                         INNER JOIN reeks USING (reeks_id)
@@ -75,6 +77,21 @@ public class uitgaveRepository
                         WHERE gebruiker_id = @gebruiker_id", new {@gebruiker_id = Gebruiker_Id});
     }
     
+    public bool RemoveFromCollection(string Uitgave_Id, string Gebruiker_Id)
+    {
+        using var connection = Connect();
+        int DeleteFromCollection = connection.Execute(
+            @"DELETE bezit FROM bezit WHERE uitgave_id = @uitgave_id AND gebruiker_id = @gebruiker_id", new { @uitgave_id = Uitgave_Id, @gebruiker_id = Gebruiker_Id});
+        if (DeleteFromCollection > 0)
+        {
+            return true; 
+        }
+
+        return false;
+    }
+    
+    
+    //add stripboek function 
     public bool AddUitgave(uitgave UitGave, reeks Reeks, uitgever Uitgever, tekenaar Tekenaar, schrijver Schrijver)
     {
         using var connection = Connect();

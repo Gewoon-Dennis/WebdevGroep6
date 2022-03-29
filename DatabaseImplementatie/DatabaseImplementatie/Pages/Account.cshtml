@@ -23,14 +23,29 @@
                         <div class="card-body col-md-8">
                             <h5 class="card-title">@comic.uitgave_titel</h5>
                             <p class="card-text">Uitgever: @comic.uitgever_naam</p>
-                            <p class="card-text">Jaar: @comic.uitgavejaar</p>
-                            <p class="card-text">Expliciet: @comic.expliciet</p>
-                            <p class="card-text">Reeks: @comic.reeks_naam</p>
+                            <p class="card-text">UitgaveJaar: @comic.uitgavejaar</p>
+                            <p class="card-text">Schrijver: @comic.schrijver_naam</p>
+                            <p class="card-text">Tekenaar: @comic.tekenaar_naam</p>
+                            <p class="card-text">Conditie: @comic.kwaliteit_boek</p>
+                            @if(@comic.gelezen == "True"){
+                                <p class="card-text">Gelezen: Jazeker</p>
+                            }
+                            else
+                            {
+                                <p class="card-text">Gelezen: Nog niet</p>
+                            }
+                            <p class="card-text">Taal: @comic.taal</p>
+                            <p class="card-text">Afmetingen: @comic.afmetingen</p>
                             <div class="a">
                                 <p class="card-text"><small class="text-muted">Druk: @comic.druk</small></p>
                                 
                             </div>
                             <div class="card-body col-md-12x"></div>
+                                                            
+                            <form method="post">
+                                <input type="hidden" value="@comic.uitgave_id" asp-for="Uitgave_Id"/>
+                                <button class="btn btn-dark" type="submit" asp-page-handler="UitCollectie">Heb ik toch niet</button>
+                            </form>
                         </div>
                     </div>
                 </div>

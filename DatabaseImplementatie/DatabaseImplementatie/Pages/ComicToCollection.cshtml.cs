@@ -10,9 +10,14 @@ public class ComicToCollection : PageModel
     [BindProperty] public bezit Bezit { get; set; }
     private string gebruiker_id;
     private string uitgave_id;
-    public void OnGet()
+    public RedirectToPageResult OnGet()
     {
-        
+        if (Login.LoggedIn == false)
+        {
+            return new RedirectToPageResult("Login");
+        }
+       
+        return null;
     }
 
     public RedirectToPageResult OnPostVoegToe()
