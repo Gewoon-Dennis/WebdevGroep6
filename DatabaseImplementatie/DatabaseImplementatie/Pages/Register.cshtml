@@ -1,0 +1,69 @@
+﻿@page
+@model DatabaseImplementatie.Pages.Register
+
+@{
+    ViewData["Title"] = "Registreren";
+}
+    <link rel="stylesheet" href="~/css/cardcss.css" asp-append-version="true"/>
+<body>
+<div>
+    <div class="container border rounded" style="padding: 20px">
+    <form id="register" asp-page-handler="Register">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row" id="spacing">
+            <div class="col-2">
+                <label>Gebruikersnaam:</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="UserName" placeholder="UserName" asp-for="Nieuwegebruiker.gebruikersnaam"/>
+            </div>
+        </div>
+        <div class="form-group row"  id="spacing">
+            <div class="col-2">
+                <label>E-mail:</label>
+            </div>
+            <div class="col-4">
+                <input type="email" id="E-mail" placeholder="E-Mail" asp-for="Nieuwegebruiker.gebruikermail"/>
+            </div>
+        </div>
+        <div class="form-group row"  id="spacing">
+            <div class="col-2">
+                <label>Wachtwoord: </label>
+            </div>
+            <div class="col-4">
+                <input type="password" id="Password" placeholder="Password" asp-for="Nieuwegebruiker.wachtwoord"/>
+            </div>
+        </div>
+        <div class="form-group row text-muted">
+            <a id="password_contain_text"> Passwords must contain at least 6 characters</a>
+        </div>
+        <div class="form-group row"  id="spacing">
+            <div class="col-2">
+                <label>Confirm Password:</label>
+            </div>
+            <div class="col-4">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" asp-for="WachtwoordCheck"/>
+            </div>
+        </div>
+        <div class="form-group row"  id="spacing">
+            <div class="from-group row">
+                <div class="button_space">
+                    <div class="button_space col-2 ">
+                        <button class="btn btn-primary" type="submit">Registreer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+    </div>
+    </body>
+
+
+        @{
+
+            if (@Model.PasswordSame == false)
+            {
+                <script>alert("Passwords did not match and/or was not long enough!\nPlease try again")</script>;
+            }
+        }

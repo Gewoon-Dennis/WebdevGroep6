@@ -1,0 +1,30 @@
+﻿@page
+@model DatabaseImplementatie.Pages.ComicToCollection
+
+@{
+    ViewData["Title"] = "AddToCollection";
+}
+<div class="container border rounded" style="padding: 20px">
+<form method="post">
+
+    <div class="col-2">
+        <label>Heb je het stripboek gelezen:</label>
+    </div>
+    <div class="col-4">
+        <input type="checkbox" asp-for="@Model.Bezit.gelezen"/>
+    </div>
+    <div class="col-2">
+        <label>op een schaal van 1 tot 10 wat is de conditie van je stripboek:</label>
+    </div>
+    <div class="col-4">
+        <input type="number" asp-for="@Model.Bezit.kwaliteit_boek"/>
+    </div>
+    <div class="col-2">
+        <label>op een schaal van 1 tot 10 wat vond je van het stripboek:</label>
+    </div>
+    <div class="col-4">
+        <input type="number" asp-for="@Model.Bezit.kwaliteit_verhaal"/>
+    </div>
+    <button type="submit" asp-page-handler="VoegToe">Voeg toe aan collectie</button>
+</form>
+</div>
