@@ -2,6 +2,8 @@
 using DatabaseImplementatie.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Org.BouncyCastle.Crypto.Agreement.JPake;
 
 namespace DatabaseImplementatie.Pages;
 
@@ -12,9 +14,12 @@ public class AddComic : PageModel
     [BindProperty] public uitgever UitgeverNaam { get; set; }
     [BindProperty] public tekenaar TekenaarNaam { get; set; }
     [BindProperty] public schrijver SchrijverNaam { get; set; }
-  
+    
+    public IEnumerable<schrijverPak> schrijverList { get; set; }
+
     public RedirectToPageResult OnGet()
     {
+        schrijverList = new artiestRepository().GetSchrijvers();
         if (Login.LoggedIn == false)
         {
             return new RedirectToPageResult("Login");
@@ -24,6 +29,7 @@ public class AddComic : PageModel
     }
     public void OnPost()
     {
+        var a = Request.Form["schrijverr"];
         NieuweUitgave.uitgave_id = Guid.NewGuid();
         ReeksNaam.reeks_id = Guid.NewGuid();
         UitgeverNaam.uitgever_id = Guid.NewGuid();

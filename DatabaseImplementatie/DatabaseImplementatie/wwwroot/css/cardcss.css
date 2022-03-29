@@ -25,3 +25,10 @@ div#spacing{
     align-self: auto;
     
 }
+div#spacingex{
+    display: flex;
+    padding-bottom: 15px;
+    align-self: auto;
+    flex-wrap: wrap;
+    flex-basis: auto;
+}
