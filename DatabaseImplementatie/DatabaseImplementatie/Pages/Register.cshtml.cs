@@ -17,11 +17,12 @@ public class Register : PageModel
 
     public IActionResult OnPostRegister()
     {
-        Nieuwegebruiker.Gebruiker_id = Guid.NewGuid();
-        Nieuwegebruiker.Rol = "Verzamelaar";
+        Nieuwegebruiker.gebruiker_id = Guid.NewGuid().ToString();
+        Nieuwegebruiker.gebruikermail = Nieuwegebruiker.gebruikermail.ToLower();
+        Nieuwegebruiker.rol = "Verzamelaar";
         
 
-        if (Nieuwegebruiker.Wachtwoord == WachtwoordCheck && WachtwoordCheck.Length >= 6)
+        if (Nieuwegebruiker.wachtwoord == WachtwoordCheck && WachtwoordCheck.Length >= 6)
         {
             var addCafeUser = new gebruikerRepository().AddNewUser(Nieuwegebruiker);
             return new RedirectToPageResult("Login");
