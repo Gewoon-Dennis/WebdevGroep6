@@ -10,6 +10,7 @@ public class Login : PageModel
     [BindProperty] public string Password { get; set; }
     public static bool LoggedIn = false;
     public static bool IsAdmin = false;
+    public static bool IsModerator = false;
     
 
     public RedirectToPageResult OnGet()
@@ -24,6 +25,7 @@ public class Login : PageModel
         {
             LoggedIn = false;
             IsAdmin = false;
+            IsModerator = false;
         }
 
         return null;
@@ -37,12 +39,19 @@ public class Login : PageModel
             HttpContext.Session.SetString("LogIn", login);
             string UserId = HttpContext.Session.GetString("LogIn");
             string Admin = new gebruikerRepository().AdminCheck(UserId);
+            string Moderator = new gebruikerRepository().ModeratorCheck(UserId);
 
             if (Admin == "Admin")
             {
                 IsAdmin = true;
+                IsModerator = true;
             }
-            
+
+            if (Moderator == "Moderator")
+            {
+                IsModerator = true;
+            }
+
             return new RedirectToPageResult("Account",false);
         }
 

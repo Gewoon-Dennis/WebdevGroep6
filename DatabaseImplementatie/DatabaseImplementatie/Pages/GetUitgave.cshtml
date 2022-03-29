@@ -48,10 +48,15 @@
                                 @if (Login.LoggedIn)
                                 {
                                     <form method="post">
-                                        <input type="hidden" value="@comic.uitgave_id" asp-for="Id"/>
+                                        <input type="hidden" value="@comic.uitgave_id" asp-for="UitgaveId"/>
                                         <button class="btn btn-dark" type="submit" asp-page-handler="Collectie">Deze heb ik</button>
+                                        @if (Login.IsModerator)
+                                        {
+                                            <button class="btn btn-dark" type="submit" asp-page-handler="UnVerify">UnVerify</button>
+                                        }
                                     </form>
                                 }
+                                
                             </div>
                         </div>
                     </div>

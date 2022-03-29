@@ -2,9 +2,9 @@
 
 public class Gebruiker
 {
-    public Guid Gebruiker_id { get; set; }
-    public string Gebruiker_Naam { get; set; }
-    public string Gebruiker_Mail { get; set; }
-    public string Wachtwoord { get; set; }
-    public string Rol { get; set; }
+    public string gebruiker_id { get; set; }
+    public string gebruikersnaam { get; set; }
+    public string gebruikermail { get; set; }
+    public string wachtwoord { get; set; }
+    public string rol { get; set; }
 }

@@ -19,12 +19,26 @@ public class uitgaveRepository
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding
                 FROM uitgave
                 INNER JOIN reeks USING (reeks_id)
                 INNER JOIN uitgever USING (uitgever_id)
                 INNER JOIN schrijver USING (schrijver_id)
-                INNER JOIN tekenaar USING (tekenaar_id);");
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE verified = 1;");
+    }
+    
+    public IEnumerable<UitgavePak> GetUnverified()
+    {
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam
+                FROM uitgave
+                INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE verified = 0;");
     }
 
     public IEnumerable<UitgavePak> GetAZ()
@@ -94,6 +108,7 @@ public class uitgaveRepository
     //add stripboek function 
     public bool AddUitgave(uitgave UitGave, reeks Reeks, uitgever Uitgever, tekenaar Tekenaar, schrijver Schrijver)
     {
+        int LinkSchrijver = 0;
         using var connection = Connect();
         
         int LinkReeks = connection.Execute(@"INSERT INTO reeks (reeks_id, reeks_naam)
@@ -105,11 +120,18 @@ public class uitgaveRepository
         int LinkTekenaar = connection.Execute(
         @"INSERT INTO tekenaar (tekenaar_id, tekenaar_naam, geboortedatum, geslacht, wikipedia_tekenaar)
             VALUES (@tekenaar_id, @tekenaar_naam, @geboortedatum, @geslacht, @wikipedia_tekenaar)", Tekenaar);
-        
-        int LinkSchrijver = connection.Execute(
-        @"INSERT INTO schrijver (schrijver_id, schrijver_naam, geboortedatum, geslacht, wikipedia_schrijver)
+
+        if (Schrijver.schrijver_id != null)
+        {
+            LinkSchrijver = connection.Execute(
+                @"INSERT INTO schrijver (schrijver_id, schrijver_naam, geboortedatum, geslacht, wikipedia_schrijver)
             VALUES (@schrijver_id, @schrijver_naam, @geboortedatum, @geslacht, @wikipedia_schrijver)", Schrijver);
-        
+        }
+        else
+        {
+            LinkSchrijver = 1;
+        }
+
         int AddUitgave = connection.Execute(@"INSERT INTO uitgave(uitgave_id, uitgave_titel, isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_id, uitgever_id, tekenaar_id, schrijver_id, afbeelding, beschrijving, verified)
                 VALUES (@uitgave_id, @uitgave_titel, @isbn, @uitgavejaar, @druk, @taal, @blz, @expliciet, @afmetingen, @reeks_id, @uitgever_id, @tekenaar_id, @schrijver_id, @afbeelding, @beschrijving, @verified)", UitGave);
 
@@ -124,6 +146,23 @@ public class uitgaveRepository
             
         }
     
+    }
+    //verify comic function
+    public bool VerifyComic(string UitgaveId)
+    {
+        using var connection = Connect();
+        int Verify = connection.Execute(@"UPDATE uitgave SET verified = '1' WHERE uitgave_id = @Uitgave_Id", new {Uitgave_Id = UitgaveId});
+        if(Verify > 0){return true;}
+
+        return false;
+    }
+    public bool UnVerifyComic(string UitgaveId)
+    {
+        using var connection = Connect();
+        int Verify = connection.Execute(@"UPDATE uitgave SET verified = '0' WHERE uitgave_id = @Uitgave_Id", new {Uitgave_Id = UitgaveId});
+        if(Verify > 0){return true;}
+
+        return false;
     }
 
 }

@@ -13,7 +13,7 @@ namespace DatabaseImplementatie.Pages;
 public class GetUitgave : PageModel
 {
     [BindProperty] public string comicPage { get; set; }
-    [BindProperty] public string Id { get; set; }
+    [BindProperty] public string UitgaveId { get; set; }
     public IEnumerable<UitgavePak> UitgaveList { get; set; }
     
     
@@ -36,8 +36,17 @@ public class GetUitgave : PageModel
 
     public RedirectToPageResult OnPostCollectie()
     {
-        HttpContext.Session.SetString("uitgaveId", Id);
+        HttpContext.Session.SetString("uitgaveId", UitgaveId);
         return new RedirectToPageResult("ComicToCollection");
+    }
+
+    public void OnPostUnVerify()
+    {
+        bool Verify = new uitgaveRepository().UnVerifyComic(UitgaveId);
+        if (Verify)
+        {
+            UitgaveList = new uitgaveRepository().GetAll();
+        }
     }
     
     

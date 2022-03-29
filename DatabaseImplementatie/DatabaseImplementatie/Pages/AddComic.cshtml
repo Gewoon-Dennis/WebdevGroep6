@@ -132,20 +132,21 @@
         </div>
         <hr/>
         <div class="form-group row" id="spacingex">
-            <select name="schrijverr" class="form-select form-select-sm" >
-                <option selected>Al bekende schrijvers</option>
+            <select name="schrijverr" class="form-select form-select-sm">
+                <option selected value="8">Al bekende schrijvers</option>
 
                 @{
                     foreach (var schrijver in Model.schrijverList)
                     {
-                        <option value= "@schrijver.schrijver_id.ToString()"> @schrijver.schrijver_naam </option>
+                        <option value="@schrijver.schrijver_id"> @schrijver.schrijver_naam </option>
                     }
                     <script>
                     
                     </script>
                 }
-                
-            </select>
+                <option value="0000"> staat niet in de lijst...</option>
+                </select>
+            
         </div>
         
         <div class="form-group row" id="spacingex">
