@@ -15,8 +15,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = G:\arcade project\WebdevGroep6\DatabaseImplementatie\DatabaseImplementatie
 build_property._RazorSourceGeneratorDebug = 
 
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/AddComic.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQ29taWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/AdminScreen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5TY3JlZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/ComicInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taWNJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/ComicToCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29taWNUb0NvbGxlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/GetArtists.cshtml]
@@ -27,28 +47,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2V0VWl0Z2F2ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/StandardPages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhbmRhcmRQYWdlc1xFcnJvci5jc2h0bWw=
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/StandardPages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhbmRhcmRQYWdlc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/StandardPages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhbmRhcmRQYWdlc1xQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/StandardPages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhbmRhcmRQYWdlc1xfVmlld0ltcG9ydHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/StandardPages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhbmRhcmRQYWdlc1xfVmlld1N0YXJ0LmNzaHRtbA==
+[G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/arcade project/WebdevGroep6/DatabaseImplementatie/DatabaseImplementatie/Pages/Shared/_Layout.cshtml]
