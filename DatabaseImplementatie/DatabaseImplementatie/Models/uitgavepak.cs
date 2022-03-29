@@ -2,7 +2,7 @@
 
 public class UitgavePak
 {
-        public Guid uitgave_id { get; set; }
+        public string uitgave_id { get; set; }
         public string uitgave_titel { get; set; }
         public long isbn { get; set; }
         public string uitgavejaar { get; set; }

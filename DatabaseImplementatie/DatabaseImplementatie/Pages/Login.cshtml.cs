@@ -43,7 +43,7 @@ public class Login : PageModel
                 IsAdmin = true;
             }
             
-            return new RedirectToPageResult("Account");
+            return new RedirectToPageResult("Account",false);
         }
 
         return null;

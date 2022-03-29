@@ -7,12 +7,21 @@ namespace DatabaseImplementatie.Pages;
 
 public class AddComic : PageModel
 {
-    [BindProperty] public C_uitgave NieuweUitgave { get; set; }
+    [BindProperty] public uitgave NieuweUitgave { get; set; }
     [BindProperty] public reeks ReeksNaam { get; set; }
     [BindProperty] public uitgever UitgeverNaam { get; set; }
     [BindProperty] public tekenaar TekenaarNaam { get; set; }
     [BindProperty] public schrijver SchrijverNaam { get; set; }
   
+    public RedirectToPageResult OnGet()
+    {
+        if (Login.LoggedIn == false)
+        {
+            return new RedirectToPageResult("Login");
+        }
+       
+        return null;
+    }
     public void OnPost()
     {
         NieuweUitgave.uitgave_id = Guid.NewGuid();

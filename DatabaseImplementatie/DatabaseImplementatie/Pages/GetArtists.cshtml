@@ -5,20 +5,34 @@
     ViewData["Title"] = "Artiest Ophalen";
 }
 
-@{
-    foreach (var schrijver in Model.SchrijverList)
-    {
-        <li>Naam: @schrijver.schrijver_naam</li>
-        <li>Geslacht: @schrijver.geslacht</li>
-        <li>Wikipedia: @schrijver.wikipedia_schrijver</li>
-        <li>Geboortedatum: @schrijver.geboortedatum</li>
-    }
+<div class="row">
+    <div class="form-group col-md">
+        <h4>Schrijver:</h4><br/>
+        @{
+            foreach (var schrijver in Model.SchrijverList)
+            {
+                <hr/>
+                <li>Naam: @schrijver.schrijver_naam</li>
+                <li>Geslacht: @schrijver.geslacht</li>
+                <li><a href="@schrijver.wikipedia_schrijver">Wikipedia</a></li>
+                <li>Geboortedatum: @schrijver.geboortedatum</li>
+                <hr/>
+            }
+        }
+    </div>
+    <div class="form-group col-md">
+        <h4>Tekenaars:</h4><br/>
+        @{
+            foreach (var tekenaar in Model.TekenaarList)
+            {
+                <hr/>
+                <li>Naam: @tekenaar.tekenaar_naam</li>
+                <li>Geslacht: @tekenaar.geslacht</li>
+                <li><a href="@tekenaar.wikipedia_tekenaar">Wikipedia</a></li>
+                <li>Geboortedatum: @tekenaar.geboortedatum</li>
+                <hr/>
+            }
+        }
 
-    foreach (var tekenaar in Model.TekenaarList)
-    {
-        <li>Naam: @tekenaar.tekenaar_naam</li>
-        <li>Geslacht: @tekenaar.geslacht</li>
-        <li>Wikipedia: @tekenaar.wikipedia_tekenaar</li>
-        <li>Geboortedatum: @tekenaar.geboortedatum</li>
-    }
-}
+    </div>
+</div>
