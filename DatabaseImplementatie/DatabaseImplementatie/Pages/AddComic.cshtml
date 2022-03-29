@@ -96,7 +96,7 @@
                 <label>afbeelding: </label>
             </div>
             <div class="col-4">
-                <input type="file" accept="image/*" id="afb" asp-for="NieuweUitgave.afbeelding"/>
+                <input type="text" id="afb" asp-for="NieuweUitgave.afbeelding"/>
 
             </div>
         </div>
@@ -138,11 +138,9 @@
                 @{
                     foreach (var schrijver in Model.schrijverList)
                     {
-                        <option value= "@schrijver.schrijver_id.ToString()"> @schrijver.schrijver_naam </option>
+                        <option name="schrijverid" value= "@schrijver.schrijver_id.ToString()"> @schrijver.schrijver_naam </option>
                     }
-                    <script>
-                    
-                    </script>
+
                 }
                 
             </select>

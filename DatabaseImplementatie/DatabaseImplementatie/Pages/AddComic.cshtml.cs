@@ -16,6 +16,9 @@ public class AddComic : PageModel
     [BindProperty] public schrijver SchrijverNaam { get; set; }
     
     public IEnumerable<schrijverPak> schrijverList { get; set; }
+    
+    [BindProperty]
+    public string schrijverselectedID { get; set; }
 
     public RedirectToPageResult OnGet()
     {
@@ -29,12 +32,22 @@ public class AddComic : PageModel
     }
     public void OnPost()
     {
-        var a = Request.Form["schrijverr"];
+        schrijverselectedID = Request.Form["schrijverr"];
+        
+        if (schrijverselectedID == null)
+        {
+            
+        SchrijverNaam.schrijver_id = Guid.NewGuid().ToString();
+        
+        }
+        else
+        {
+            SchrijverNaam.schrijver_id = schrijverselectedID;
+        }
         NieuweUitgave.uitgave_id = Guid.NewGuid();
         ReeksNaam.reeks_id = Guid.NewGuid();
         UitgeverNaam.uitgever_id = Guid.NewGuid();
-        TekenaarNaam.tekenaar_id = Guid.NewGuid();
-        SchrijverNaam.schrijver_id = Guid.NewGuid();
+        TekenaarNaam.tekenaar_id = Guid.NewGuid().ToString();
 
         NieuweUitgave.reeks_id = ReeksNaam.reeks_id;
         NieuweUitgave.uitgever_id = UitgeverNaam.uitgever_id;
