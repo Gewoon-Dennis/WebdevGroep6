@@ -32,6 +32,7 @@ public class AddComic : PageModel
     {
         var schrijverID = Request.Form["schrijverr"];
         NieuweUitgave.uitgave_id = Guid.NewGuid().ToString();
+        
         ReeksNaam.reeks_id = Guid.NewGuid().ToString();
         UitgeverNaam.uitgever_id = Guid.NewGuid().ToString();
         TekenaarNaam.tekenaar_id = Guid.NewGuid().ToString();
