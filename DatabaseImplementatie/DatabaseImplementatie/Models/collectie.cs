@@ -15,4 +15,5 @@ public class collectie
     public string gelezen { get; set; }
     public string kwaliteit_boek { get; set; }
     public string kwaliteit_verhaal { get; set; }
+    public string afbeelding { get; set; }
 }

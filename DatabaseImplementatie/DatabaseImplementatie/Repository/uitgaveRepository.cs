@@ -32,7 +32,7 @@ public class uitgaveRepository
     {
         using var connection = Connect();
         return Connect().Query<UitgavePak>(
-            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam, afbeelding
                 FROM uitgave
                 INNER JOIN reeks USING (reeks_id)
                 INNER JOIN uitgever USING (uitgever_id)
@@ -145,7 +145,7 @@ public class uitgaveRepository
     public IEnumerable<collectie> GetCollectie(string Gebruiker_Id)
     {
         using var connection = Connect();
-        return Connect().Query<collectie>(@"SELECT uitgave_id, uitgave_titel, uitgavejaar, druk, taal, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam, gelezen, kwaliteit_boek, kwaliteit_verhaal
+        return Connect().Query<collectie>(@"SELECT uitgave_id, uitgave_titel, uitgavejaar, druk, taal, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam, gelezen, kwaliteit_boek, kwaliteit_verhaal, afbeelding
                         FROM bezit
                         INNER JOIN uitgave USING (uitgave_id)
                         INNER JOIN reeks USING (reeks_id)
