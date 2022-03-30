@@ -15,7 +15,7 @@
                 <label>Strip naam: </label>
             </div>
             <div class="col-4">
-                <input type="text" id="titel" placeholder="Strip naam" asp-for="NieuweUitgave.uitgave_titel"/>
+                <input type="text" id="titel" placeholder="Strip naam" required="required" asp-for="NieuweUitgave.uitgave_titel"/>
             </div>
         </div>
         
@@ -24,7 +24,7 @@
                     <label>Beschrijving: </label>
                 </div>
                 <div class="col-4">
-                    <textarea type="text" id="beschrijving" placeholder="Beschrijving" maxlength="300" asp-for="NieuweUitgave.beschrijving"></textarea>
+                    <textarea type="text" id="beschrijving" placeholder="Beschrijving" maxlength="2500" required="required" asp-for="NieuweUitgave.beschrijving"></textarea>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
                 <label>Uitgave jaar: </label>
             </div>
             <div class="col-4">
-                <input type="date" id="uitgavejaar" placeholder="Uitgave Jaar" asp-for="NieuweUitgave.uitgavejaar"/>
+                <input type="date" id="uitgavejaar" placeholder="Uitgave Jaar" required="required" asp-for="NieuweUitgave.uitgavejaar"/>
 
             </div>
         </div>
@@ -52,7 +52,7 @@
                 <label>Druk: </label>
             </div>
             <div class="col-4">
-                <input type="number" id="Druk" placeholder="Druk" asp-for="NieuweUitgave.druk"/>
+                <input type="number" id="Druk" placeholder="Druk" required="required" asp-for="NieuweUitgave.druk"/>
 
             </div>
         </div>
@@ -61,7 +61,7 @@
                 <label>Taal: </label>
             </div>
             <div class="col-4">
-                <input type="text" maxlength="20" id="taal" placeholder="Taal" asp-for="NieuweUitgave.taal"/>
+                <input type="text" maxlength="20" id="taal" placeholder="Taal" required="required" asp-for="NieuweUitgave.taal"/>
 
             </div>
         </div>
@@ -97,7 +97,7 @@
                 <label>afbeelding: </label>
             </div>
             <div class="col-4">
-                <input type="text" id="afb" asp-for="NieuweUitgave.afbeelding"/>
+                <input type="text" placeholder="Afbeelding URL" id="afb" required="required" asp-for="NieuweUitgave.afbeelding"/>
 
             </div>
         </div>
