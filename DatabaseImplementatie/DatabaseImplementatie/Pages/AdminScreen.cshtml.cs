@@ -58,5 +58,13 @@ public class AdminScreen : PageModel
             UitgaveList = new uitgaveRepository().GetUnverified();
         }
     }
+    public void OnPostDelete()
+    { 
+        bool Delete = new uitgaveRepository().DeleteComic(UitgaveId);
+        if (Delete)
+        {
+            UitgaveList = new uitgaveRepository().GetUnverified();
+        }
+    }
     
 }

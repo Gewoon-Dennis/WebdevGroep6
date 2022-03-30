@@ -4,7 +4,23 @@
 @{
     ViewData["Title"] = "Registreren";
 }
-    <link rel="stylesheet" href="~/css/cardcss.css" asp-append-version="true"/>
+<link rel="stylesheet" href="~/css/cardcss.css" asp-append-version="true"/>
+
+<script>
+    var passConfirm = function() {
+        if (document.getElementById("Password").value ==
+            document.getElementById("confirmPassword").value) {
+                document.getElementById("Message").style.color = "Green";
+                document.getElementById("Message").innerHTML = "Passwords match!"
+                document.getElementById("registreer").disabled = false
+            } else {
+                document.getElementById("Message").style.color = "Red";
+                document.getElementById("Message").innerHTML = "Passwords do NOT match!"
+                document.getElementById("registreer").disabled = true
+            }
+    }
+</script>
+
 <body>
 <div>
     <div class="container border rounded" style="padding: 20px">
@@ -15,7 +31,7 @@
                 <label>Gebruikersnaam:</label>
             </div>
             <div class="col-4">
-                <input type="text" id="UserName" placeholder="UserName" asp-for="Nieuwegebruiker.gebruikersnaam"/>
+                <input type="text" id="UserName" placeholder="UserName" required="required" asp-for="Nieuwegebruiker.gebruikersnaam"/>
             </div>
         </div>
         <div class="form-group row"  id="spacing">
@@ -23,15 +39,22 @@
                 <label>E-mail:</label>
             </div>
             <div class="col-4">
-                <input type="email" id="E-mail" placeholder="E-Mail" asp-for="Nieuwegebruiker.gebruikermail"/>
+                <input type="email" id="E-mail" placeholder="E-Mail" required="required" asp-for="Nieuwegebruiker.gebruikermail"/>
             </div>
         </div>
         <div class="form-group row"  id="spacing">
             <div class="col-2">
-                <label>Wachtwoord: </label>
+                <label>Password: </label>
             </div>
             <div class="col-4">
-                <input type="password" id="Password" placeholder="Password" asp-for="Nieuwegebruiker.wachtwoord"/>
+                <input type="password" 
+                       onkeyup="passConfirm();" 
+                       name="Password"
+                       id="Password" 
+                       minlength="6" 
+                       placeholder="Password" 
+                       required="required" 
+                       asp-for="Nieuwegebruiker.wachtwoord"/>
             </div>
         </div>
         <div class="form-group row text-muted">
@@ -42,28 +65,26 @@
                 <label>Confirm Password:</label>
             </div>
             <div class="col-4">
-                <input type="password" id="confirmPassword" placeholder="Confirm Password" asp-for="WachtwoordCheck"/>
+                <input type="password"
+                       onkeyup="passConfirm();"
+                       name="confirmPassword"
+                       id="confirmPassword" 
+                       required="required" 
+                       minlength="6" 
+                       placeholder="Confirm Password"/>
             </div>
+            <span id="Message"></span>
         </div>
         <div class="form-group row"  id="spacing">
             <div class="from-group row">
                 <div class="button_space">
                     <div class="button_space col-2 ">
-                        <button class="btn btn-primary" type="submit">Registreer</button>
+                        <button id="registreer" class="btn btn-primary" type="submit">Registreer</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
     </div>
-    </div>
-    </body>
-
-
-        @{
-
-            if (@Model.PasswordSame == false)
-            {
-                <script>alert("Passwords did not match and/or was not long enough!\nPlease try again")</script>;
-            }
-        }
+</div>
+</body>

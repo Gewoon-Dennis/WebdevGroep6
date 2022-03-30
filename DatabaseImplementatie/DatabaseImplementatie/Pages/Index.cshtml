@@ -27,18 +27,13 @@
               <h5 class="mb-4">De grootste database voor alle stripboeken!</h5>
               <a
                 class="btn btn-primary btn-lg m-2"
-                asp-area=""
-                asp-page="/GetUitgave"
+                href="GetUitgave"
                 role="button"
-                rel="nofollow"
-                target="_blank"
-              >Zie uitgaves</a>
+                >Zie uitgaves</a>
               @if (Login.LoggedIn == false)
               {
               <a class="btn btn-outline-light btn-lg m-2"
-                asp-area=""
-                asp-page="/Register"
-                target="_blank"
+                href="Register"
                 role="button"
                      >Registreer nu!</a>
               }

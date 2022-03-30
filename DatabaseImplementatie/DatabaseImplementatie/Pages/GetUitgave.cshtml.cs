@@ -38,13 +38,31 @@ public class GetUitgave : PageModel
     {
         UitgaveList = new uitgaveRepository().GetReeks();
     }
+    
     public void OnPostAZ()
     {
         UitgaveList = new uitgaveRepository().GetAZ();
     }
-
     
+    public void OnPostZA()
+    {
+        UitgaveList = new uitgaveRepository().GetZA();
+    }
 
+    public void OnPostUitgever()
+    {
+        UitgaveList = new uitgaveRepository().GetUitgever();
+    }
+
+    public void OnPostSchrijver()
+    {
+        UitgaveList = new uitgaveRepository().GetSchrijver();
+    }
+
+    public void OnPostTekenaar()
+    {
+        UitgaveList = new uitgaveRepository().GetTekenaar();
+    }
     public RedirectToPageResult OnPostCollectie()
     {
         HttpContext.Session.SetString("uitgaveId", UitgaveId);

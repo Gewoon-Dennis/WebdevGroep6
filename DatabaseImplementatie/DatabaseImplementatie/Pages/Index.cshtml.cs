@@ -18,8 +18,13 @@ public class IndexModel : PageModel
 
     public RedirectToPageResult OnPostZoekComic()
     {
-        HttpContext.Session.SetString("ZoekTerm", search);
-        return new RedirectToPageResult("GetUitgave");
+        if (search != null)
+        {
+            HttpContext.Session.SetString("ZoekTerm", search);
+            return new RedirectToPageResult("GetUitgave"); 
+        }
+
+        return null;
     }
 
 }
