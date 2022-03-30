@@ -14,12 +14,23 @@ public class GetUitgave : PageModel
 {
     [BindProperty] public string comicPage { get; set; }
     [BindProperty] public string UitgaveId { get; set; }
+    [BindProperty] public string search { get; set; }
     public IEnumerable<UitgavePak> UitgaveList { get; set; }
     
     
     public void OnGet()
     {
-        UitgaveList = new uitgaveRepository().GetAll();
+        string Zoekterm = HttpContext.Session.GetString("ZoekTerm");
+        if (Zoekterm != null)
+        {
+            UitgaveList = new uitgaveRepository().ZoekUitgave(Zoekterm);
+            HttpContext.Session.Remove("ZoekTerm");
+        }
+        else
+        {
+           UitgaveList = new uitgaveRepository().GetAll(); 
+        }
+        
         
     }
     
@@ -27,13 +38,31 @@ public class GetUitgave : PageModel
     {
         UitgaveList = new uitgaveRepository().GetReeks();
     }
+    
     public void OnPostAZ()
     {
         UitgaveList = new uitgaveRepository().GetAZ();
     }
-
     
+    public void OnPostZA()
+    {
+        UitgaveList = new uitgaveRepository().GetZA();
+    }
 
+    public void OnPostUitgever()
+    {
+        UitgaveList = new uitgaveRepository().GetUitgever();
+    }
+
+    public void OnPostSchrijver()
+    {
+        UitgaveList = new uitgaveRepository().GetSchrijver();
+    }
+
+    public void OnPostTekenaar()
+    {
+        UitgaveList = new uitgaveRepository().GetTekenaar();
+    }
     public RedirectToPageResult OnPostCollectie()
     {
         HttpContext.Session.SetString("uitgaveId", UitgaveId);
@@ -49,5 +78,9 @@ public class GetUitgave : PageModel
         }
     }
     
+    public void OnPostZoekComic()
+    {
+        UitgaveList = new uitgaveRepository().ZoekUitgave(search);
+    }
     
 }

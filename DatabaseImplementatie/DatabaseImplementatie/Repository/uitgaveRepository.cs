@@ -41,6 +41,7 @@ public class uitgaveRepository
                 WHERE verified = 0;");
     }
 
+    //get functios for filters
     public IEnumerable<UitgavePak> GetAZ()
     {
         using var connection = Connect();
@@ -49,9 +50,22 @@ public class uitgaveRepository
                 INNER JOIN uitgever USING (uitgever_id)
                 INNER JOIN schrijver USING (schrijver_id)
                 INNER JOIN tekenaar USING (tekenaar_id)
-                order by uitgave_titel;");
+                WHERE verified = 1
+                order by uitgave_titel ASC");
     }
-
+    
+    public IEnumerable<UitgavePak> GetZA()
+    {
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE verified = 1
+                order by uitgave_titel DESC");
+    }
+    
     public IEnumerable<UitgavePak> GetReeks()
     {
         using var connection = Connect();
@@ -60,7 +74,57 @@ public class uitgaveRepository
                 INNER JOIN uitgever USING (uitgever_id)
                 INNER JOIN schrijver USING (schrijver_id)
                 INNER JOIN tekenaar USING (tekenaar_id)
-                order by reeks_naam;");
+                WHERE verified = 1
+                order by reeks_naam ASC");
+    }
+
+    public IEnumerable<UitgavePak> GetUitgever()
+    {
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE verified = 1
+                order by uitgever_naam ASC");
+    }
+    
+    public IEnumerable<UitgavePak> GetTekenaar()
+    {
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE verified = 1
+                order by tekenaar_naam ASC");
+    }
+    
+    public IEnumerable<UitgavePak> GetSchrijver()
+    {
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE verified = 1
+                order by schrijver_naam ASC");
+    }
+   
+    //collection search
+    public IEnumerable<UitgavePak> ZoekUitgave(string searchTerm)
+    {
+        string Zoekterm = "%" + searchTerm + "%";
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding, verified FROM uitgave INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE uitgave_titel LIKE @search AND verified = 1", new{@search = Zoekterm});
     }
 
     //collection functions
@@ -160,6 +224,20 @@ public class uitgaveRepository
     {
         using var connection = Connect();
         int Verify = connection.Execute(@"UPDATE uitgave SET verified = '0' WHERE uitgave_id = @Uitgave_Id", new {Uitgave_Id = UitgaveId});
+        if(Verify > 0){return true;}
+
+        return false;
+    }
+    
+    //delete unverified comic
+    public bool DeleteComic(string UitgaveId)
+    {
+        using var connection = Connect();
+        int Verify = connection.Execute(@"DELETE uitgave FROM uitgave
+                    INNER JOIN reeks USING (reeks_id)
+                    INNER JOIN uitgever USING (uitgever_id)
+                    INNER JOIN schrijver USING (schrijver_id)
+                    INNER JOIN tekenaar USING (tekenaar_id) WHERE uitgave_id = @Uitgave_Id", new {Uitgave_Id = UitgaveId});
         if(Verify > 0){return true;}
 
         return false;

@@ -72,13 +72,16 @@
 
                                 </div>
                                 <div class="card-body col-md-12x">
-                                    @if (Login.LoggedIn)
-                                    {
+                                    <div class="row">
                                         <form method="post">
                                             <input type="hidden" value="@comic.uitgave_id" asp-for="UitgaveId"/>
                                             <button class="btn btn-dark" type="submit" asp-page-handler="Verify">Verify</button>
                                         </form>
-                                    }
+                                        <form asp-page-handler="Delete" method="post" onclick="return confirm('Are you sure you want to delete this?')">
+                                            <input type="hidden" value="@comic.uitgave_id" asp-for="UitgaveId"/>
+                                            <button type="submit" class="btn btn-dark">Delete Comic</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

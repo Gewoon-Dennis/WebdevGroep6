@@ -2,7 +2,7 @@
 
 public class uitgave
 {
-        public Guid uitgave_id { get; set; }
+        public string uitgave_id { get; set; }
         public string uitgave_titel { get; set; }
         public long isbn { get; set; }
         public string uitgavejaar { get; set; }
@@ -11,8 +11,8 @@ public class uitgave
         public int blz { get; set; }
         public bool expliciet { get; set; }
         public string afmetingen { get; set; }
-        public Guid reeks_id { get; set; }
-        public Guid uitgever_id { get; set; }
+        public string reeks_id { get; set; }
+        public string uitgever_id { get; set; }
         public string schrijver_id { get; set; }
         public string tekenaar_id { get; set; }
         public string afbeelding { get; set; }
