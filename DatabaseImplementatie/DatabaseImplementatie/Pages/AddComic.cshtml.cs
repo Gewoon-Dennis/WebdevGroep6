@@ -16,7 +16,7 @@ public class AddComic : PageModel
     [BindProperty] public schrijver SchrijverNaam { get; set; }
     
     
-    public IEnumerable<schrijverPak> schrijverList { get; set; }
+    public IEnumerable<schrijver> schrijverList { get; set; }
 
     public RedirectToPageResult OnGet()
     {
