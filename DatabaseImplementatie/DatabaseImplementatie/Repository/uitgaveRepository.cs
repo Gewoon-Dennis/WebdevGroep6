@@ -28,6 +28,20 @@ public class uitgaveRepository
                 WHERE verified = 1;");
     }
     
+    public IEnumerable<UitgavePak> GetFrontPage()
+    {
+        using var connection = Connect();
+        return Connect().Query<UitgavePak>(
+            @"SELECT DISTINCT uitgave_id, uitgave_titel,  isbn, uitgavejaar, druk, taal, blz, expliciet, afmetingen, reeks_naam, uitgever_naam, tekenaar_naam, schrijver_naam,afbeelding
+                FROM uitgave
+                INNER JOIN reeks USING (reeks_id)
+                INNER JOIN uitgever USING (uitgever_id)
+                INNER JOIN schrijver USING (schrijver_id)
+                INNER JOIN tekenaar USING (tekenaar_id)
+                WHERE verified = 1 
+                LIMIT 4;");
+    }
+    
     public IEnumerable<UitgavePak> GetUnverified()
     {
         using var connection = Connect();

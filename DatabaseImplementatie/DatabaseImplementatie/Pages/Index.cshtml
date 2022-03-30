@@ -78,109 +78,59 @@
         
         <!--Section: Content-->
         <section class="text-center">
-          <h4 class="mb-5"><strong>Laatst toegevoegd:</strong></h4>
+          <h4 class="mb-5"><strong>Onze Favorieten</strong></h4>
           
           
           
           
-          <div class="row">
-            <div class="col-lg-4 col-md-12 mb-4">
-              
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img
-                    src="https://1.bp.blogspot.com/-hrtqQnp1x80/YN70GdM63hI/AAAAAAAAMGw/tVP4-Tcx82EG_LYisnJpBosiz0fsJLm0gCLcBGAsYHQ/s2048/Donald%2BDuck%2B27-2021.jpg"
-                    class="img-fluid"/>
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Donald Duck 27-2021</h5>
-                  <p class="card-text">
-                    "Vorige week al aangekondigd, deze week te vinden op pagina 5 t/m 14 van de nieuwe Donald Duck (nr 27-2021), 
-                    Donald Duck in  'De ballenjongens van Wimbleduck'. 
-                    Een verhaal dat ik samen schreef met collega Paul Hoogma."
-                  </p>
-                  <a href="#!" class="btn btn-secondary btn-lg">Bekijk</a>
+        <div class="row" style=" display: flex; justify-content: space-between">
+          @{
+            foreach (var comic in Model.UitgaveList)
+            {
+             
+              <div class="card mb-3" style="max-width: 45%; padding: unset;">
+                <div class="row g-0">
+                  <div class="col-4">
+                    <img src="@comic.afbeelding" class="img-fluid rounded-start" alt="..." style="max-height: 100%" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADDCAMAAACxkIT5AAAASFBMVEVUVFSoqKhOTk5RUVGrq6tzc3OZmZmFhYWwsLBMTEyXl5etra1vb29+fn6Li4uTk5NiYmJnZ2dbW1uhoaGAgIBeXl5ycnJsbGwxLNHVAAAEr0lEQVR4nO2cDZeiIBSG4V4ElQSVJv//P13ATPuY2Wlqzy7u+5wzk0l2uk9cQEOEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAaTO+H/3ZQz8GTfj9TWRK4svLd2Ko0B+rtDhQcwAEcwAEcwAEcwAEcwAEcwMGuHahuiYLMXbly9OXBcLBDBwwHcCDgIJfDARyI/9tBwzPNIweXwj07kK1Z0PeF+lLo9+xAqoWnC/fj4BXgAA7gAA7gAA7gAA7gAA7gAA7gAA7gAA7g4P90kK6a2ZnPL6Dt10EMXgbvuuowDcMwHarO+SDt1yL25CDG77tepMn4K/GZ6DsfPezfgbLBDCn6RwdFE4MJn2nYiQNl/dQ8jP9yIDeTf2xhFw6UcuM3bkZhGt2jlmEPDqwf6fdHZmj09/eAlO/A6v7GwNwSnm9Vug2Pen1roXQHSlZXWRCjF0N1dL7VWrfeHavYUfD1Kyqp9uTAtuPm8zOJg8vDgXPa59GS1GbirSgeW7sfB7Zr1iKi0yfDgDRwOGwtNN1WQskOlFxbgtjmmy/HQVaaTd9B/SYfCnagtNjE5H97YhDHEBtnQq9vVKwD6y8BpR7vO6eTatuL0qWXLNaBdUtTwGS+cXJ4DleZS0I0zpbtQJlFAQ3hmUsKKgxLVVjmLhXrYAmEzLM3/1pzObZwB/PHZvFUJViqwnlQwXtwcNXFPSFBzvmwBwd0+OnFRXVKEnbggF5YB8BWtAcHryhIw2wq38FrCnJNKN0BTa8uiGGn0vvGj9d/a1neo1QHP+oT7yTIsh28ETiAAziAAziAAziAAziAAzjYiwOsIclTePtSoqGwtUSxpiwAAABwQ5p8lx7m31wpTzjj607u/DRv8byT55/b0/a6gx9OYPz34aH1KWrXsWDhggyG+aDbjB5yeNP85EPQSUvZDhSP0ulg8h2za0+clm2n+FZt683tDM9/Hz5YeWRBMXQxqlBNnQw8GGNCMMb1+SWVTeu/uJFM7aaDryvmU51KKDimEGR0cKobPtTHo9O1L01CdFApkR2QDrEm06hcfGhav8xbj6dVnO9gGOqqSasF2TGGm0ryUaGTsTacbHIQs6GZ1nkphRAdNNJQjIbGOp/rkJEpy1u/WQkqZTqTC/OcJdvRlYNOLQ7yzs7+lUh+TnJQ1SmaGNeY90zp8cqB9ZFDE+ZdMQOaKwckj7Q6EGN9KKtdjA4oBRUdVHMIscr3tw6cc8nBvEgYaX/joLKbeiBEXdq5c3SQPrw2NNUf8567enDOhbUeXOdC/DPT6uCjHspzIOI3HB2IOq8UR+6uPZgTPBbkXaOtaMh5E5MgO4i1oLo4aIwqS8HsgAebvlEvx/ht9/XxsQPua5P6BS/jE3tsOJqYsoMoMahzv0BdaamQan6OuI7jAxGU6VzdpuBj0t86iC1+rbtjsLGq87F2nUlTnEmm0dVkcz3wvs0Tkwqjd5z/p7acu1b7ah47d+u3OZjzBvVOazPO0/i8blPu8DFdOaNjdNinoVQlCqsFifNAKD/weiFsO+6/bG7Ll01e/+ebQP/8JwYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwB/gFh35K7dZjp9sAAAAASUVORK5CYII=';">
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body col-md-8">
+                      <h5 class="card-title">@comic.uitgave_titel</h5>
+                      <p class="card-text">Uitgever: @comic.uitgever_naam</p>
+                      <p class="card-text">Uitgavejaar: @comic.uitgavejaar</p>
+                      <p class="card-text">Schrijver: @comic.schrijver_naam</p>
+                      <p class="card-text">Tekenaar: @comic.tekenaar_naam</p>
+                      @if (comic.expliciet)
+                      {
+                        <p class="card-text">Expliciet: Ja</p>
+                      }
+                      else
+                      {
+                        <p class="card-text">Expliciet: Nee</p>
+                      }
+     
+                      <p class="card-text">Reeks: @comic.reeks_naam</p>
+                      <div class="a">
+                        <p class="card-text"><small class="text-muted">Druk: @comic.druk</small></p>
+                                     
+                      </div>
+                                 
+                      <div class="card-body col-md-12x">
+                                     
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img
-                    src="https://blogger.googleusercontent.com/img/a/AVvXsEjmtDuLIMnsjlF0lQ-vjnS_IvNZNz-p5nLTxURF9luGuMKwbXqt7EStCsPCTlc06V295aBnRNe2qyp3bZw-FviZDgi-6ojCw0H-O-jknk5nCOXoi_-74tBmkOnptzPThLeUPHntmAknrusiDOVRPn5z2obIYyDnW4HpOYUZZ_y81dqIZ0eGRhKayEZubw=s3098"
-                    class="img-fluid"
-                  />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Donald Duck 1-2022</h5>
-                  <p class="card-text">
-                    "Het is de laatste dag van het jaar, maar de eerste bladen van 2022 liggen al in de winkel. Waaronder de eerste Donald Duck van het nieuwe jaar. 
-                    En dat is niet zomaar een nummer. 
-                    Dit is was Sander Dieben er op zijn Facebookpagina al eerder over schreef."
-                  </p>
-                  <a href="#!" class="btn btn-secondary btn-lg">Bekijk</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img
-                    src="http://3.bp.blogspot.com/_x6A1xP8NXmo/TIKVHtWEhjI/AAAAAAAAD4c/-le040N0l2o/s1600/ZZT_COVER.jpg"
-                    class="img-fluid"
-                  />
-                  <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">De Zuidzee Trilogie</h5>
-                  <p class="card-text">
-                    Oplage 100. Hardcover met linnen rug. 
-                    De drie zuidzee verhalen, voorzien van een nieuwe voorplaat, maar nu dus voor het eerst, 
-                    gedrieën in EEN, lekker dikke, linnen band.
-                  </p>
-                  <a href="#!" class="btn btn-secondary btn-lg">Bekijk</a>
-                </div>
-              </div>
-            </div>
-          </div>
+            }
+         
+          }
+        </div>
         </section>
         <!--Section: Content-->
 
         <hr class="my-5" />
         
-        <!--Section: Content-->
-                <section>
-                  <div class="row">
-                    <div class="col-md-6 gx-5 mb-4">
-                      <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                        <img src="https://2.bp.blogspot.com/Wozwshz0ZsU-VDyTbYg-CGaTrTPvalzAl3_It0kJULNsYMWHNuzNEwq447qAGCX-iSjBveZcPfprhHPf8Z-ifEp9vNbMTWJH0XW3SglmDfCfCuiOpJLweAZLbBGCoDYI8AcIRbZEvw=s1600" class="img-fluid" />
-                        <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
-                      </div>
-                    </div>
-        
-                    <div class="col-md-6 gx-5 mb-4">
-                      <h4><strong>De database</strong></h4>
-                      <p class="text-muted">
-                        De database van ComicParadise heeft meer dan 1000 stripboeken.
-
-                      </p>
-                    </div>
-                  </div>
-                </section>
-                <!--Section: Content-->
-
       </div>
     </main>
     <!--Main layout-->
