@@ -173,17 +173,41 @@ public class uitgaveRepository
     public bool AddUitgave(uitgave UitGave, reeks Reeks, uitgever Uitgever, tekenaar Tekenaar, schrijver Schrijver)
     {
         int LinkSchrijver = 0;
+        int LinkTekenaar = 0;
+        int LinkUitgever = 0;
+        int LinkReeks = 0;
+        
         using var connection = Connect();
-        
-        int LinkReeks = connection.Execute(@"INSERT INTO reeks (reeks_id, reeks_naam)
+        if (Reeks.reeks_id != null)
+        {
+        LinkReeks = connection.Execute(@"INSERT INTO reeks (reeks_id, reeks_naam)
             VALUES (@reeks_id, @reeks_naam)", Reeks);
+        }
+        else
+        {
+            LinkReeks = 1;
+        }
         
-        int LinkUitgever = connection.Execute(@"INSERT INTO uitgever (uitgever_id, uitgever_naam)
+        if (Uitgever.uitgever_id != null)
+        {
+        LinkUitgever = connection.Execute(@"INSERT INTO uitgever (uitgever_id, uitgever_naam)
             VALUES (@uitgever_id, @uitgever_naam)", Uitgever);
+        }
+        else
+        {
+            LinkUitgever = 1;
+        }
         
-        int LinkTekenaar = connection.Execute(
+        if (Tekenaar.tekenaar_id != null)
+        {
+        LinkTekenaar = connection.Execute(
         @"INSERT INTO tekenaar (tekenaar_id, tekenaar_naam, geboortedatum, geslacht, wikipedia_tekenaar)
             VALUES (@tekenaar_id, @tekenaar_naam, @geboortedatum, @geslacht, @wikipedia_tekenaar)", Tekenaar);
+        }
+        else
+        {
+            LinkTekenaar = 1;
+        }
 
         if (Schrijver.schrijver_id != null)
         {

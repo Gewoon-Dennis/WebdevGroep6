@@ -15,11 +15,21 @@ public class artiestRepository
     public IEnumerable<tekenaar> GetTekenaars()
     {
         using var connection = Connect();
-        return Connect().Query<tekenaar>("SELECT * FROM tekenaar");
+        return Connect().Query<tekenaar>("SELECT DISTINCT * FROM tekenaar");
     }
     public IEnumerable<schrijver> GetSchrijvers()
     {
         using var connection = Connect();
-        return Connect().Query<schrijver>("SELECT * FROM schrijver");
+        return Connect().Query<schrijver>("SELECT DISTINCT * FROM schrijver");
+    }
+    public IEnumerable<reeks> GetReeks()
+    {
+        using var connection = Connect();
+        return Connect().Query<reeks>("SELECT DISTINCT * FROM reeks");
+    }
+    public IEnumerable<uitgever> GetUitgevers()
+    {
+        using var connection = Connect();
+        return Connect().Query<uitgever>("SELECT DISTINCT * FROM uitgever");
     }
 } 

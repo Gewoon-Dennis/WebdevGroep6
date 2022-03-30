@@ -17,10 +17,17 @@ public class AddComic : PageModel
     
     
     public IEnumerable<schrijver> schrijverList { get; set; }
+    public IEnumerable<tekenaar> tekenaarList { get; set; }
+    public IEnumerable<uitgever> uitgeverList { get; set; }
+    public IEnumerable<reeks> reeksList { get; set; }
 
     public RedirectToPageResult OnGet()
     {
         schrijverList = new artiestRepository().GetSchrijvers();
+        tekenaarList = new artiestRepository().GetTekenaars();
+        uitgeverList = new artiestRepository().GetUitgevers();
+        reeksList = new artiestRepository().GetReeks();
+        
         if (Login.LoggedIn == false)
         {
             return new RedirectToPageResult("Login");
@@ -28,14 +35,46 @@ public class AddComic : PageModel
        
         return null;
     }
-    public void OnPost()
+    public RedirectToPageResult OnPost()
     {
         var schrijverID = Request.Form["schrijverr"];
-        NieuweUitgave.uitgave_id = Guid.NewGuid().ToString();
+        var tekenaarID = Request.Form["tekenaarr"];
+        var ReeksID = Request.Form["reeksr"];
+        var UitgeverID = Request.Form["uitgeverr"];
         
-        ReeksNaam.reeks_id = Guid.NewGuid().ToString();
-        UitgeverNaam.uitgever_id = Guid.NewGuid().ToString();
-        TekenaarNaam.tekenaar_id = Guid.NewGuid().ToString();
+        NieuweUitgave.uitgave_id = Guid.NewGuid().ToString();
+
+
+        if (UitgeverID == "0000")
+        {
+            UitgeverNaam.uitgever_id = Guid.NewGuid().ToString();
+            NieuweUitgave.uitgever_id = UitgeverNaam.uitgever_id;
+        }
+        else
+        {
+            NieuweUitgave.uitgever_id = UitgeverID;
+        }
+        
+        if (ReeksID == "0000")
+        {
+            ReeksNaam.reeks_id = Guid.NewGuid().ToString();
+            NieuweUitgave.reeks_id = ReeksNaam.reeks_id;
+        }
+        else
+        {
+            NieuweUitgave.reeks_id = ReeksID;
+        }
+        if (tekenaarID == "0000")
+        {
+            TekenaarNaam.tekenaar_id = Guid.NewGuid().ToString();
+            NieuweUitgave.tekenaar_id = TekenaarNaam.tekenaar_id;
+
+        }
+        else
+        {
+            NieuweUitgave.tekenaar_id = tekenaarID;
+        }
+        
         if (schrijverID == "0000")
         {
             SchrijverNaam.schrijver_id = Guid.NewGuid().ToString();
@@ -45,13 +84,9 @@ public class AddComic : PageModel
         {
             NieuweUitgave.schrijver_id = schrijverID;
         }
-        NieuweUitgave.reeks_id = ReeksNaam.reeks_id;
-        NieuweUitgave.uitgever_id = UitgeverNaam.uitgever_id;
-        
-        NieuweUitgave.tekenaar_id = TekenaarNaam.tekenaar_id;
         NieuweUitgave.verified = false;
         
         new uitgaveRepository().AddUitgave(NieuweUitgave, ReeksNaam, UitgeverNaam, TekenaarNaam, SchrijverNaam);
-        schrijverList = new artiestRepository().GetSchrijvers();
+        return new RedirectToPageResult("AddComic");
     }
 }

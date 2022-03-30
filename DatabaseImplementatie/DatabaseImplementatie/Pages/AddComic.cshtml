@@ -1,4 +1,5 @@
 ﻿@page
+@using DatabaseImplementatie.Models
 @model DatabaseImplementatie.Pages.AddComic
 
 @{
@@ -69,7 +70,7 @@
                 <label>Aantal bladzijden </label>
             </div>
             <div class="col-4">
-                <input type="number" id="blz" placeholder="Aantal blz" asp-for="NieuweUitgave.blz"/>
+                <input type="number" id="blz" placeholder="Aantal blz" required="required" asp-for="NieuweUitgave.blz"/>
 
             </div>
         </div>
@@ -96,12 +97,27 @@
                 <label>afbeelding: </label>
             </div>
             <div class="col-4">
-                <input type="file" accept="image/*" id="afb" asp-for="NieuweUitgave.afbeelding"/>
+                <input type="text" id="afb" asp-for="NieuweUitgave.afbeelding"/>
 
             </div>
         </div>
         <hr/>
         
+        <div class="form-group row" id="spacingex">
+                    <select name="tekenaarr" class="form-select form-select-sm">
+                        <option selected value="">Al bekende tekenaars</option>
+                        <option value="0000"> staat niet in de lijst...</option>
+                        @{
+                            if (Model.tekenaarList != null)
+                            {
+                                foreach (var tekenaar in Model.tekenaarList)
+                                {
+                                    <option value="@tekenaar.tekenaar_id"> @tekenaar.tekenaar_naam </option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
         
         <div class="form-group row" id="spacingex">
             <div class="col-2">
@@ -109,15 +125,6 @@
             </div>
             <div class="col-4">
                 <input type="text" id="teken" placeholder="tekenaarnaam" asp-for="TekenaarNaam.tekenaar_naam"/>
-
-            </div>
-        </div>
-        <div class="form-group row" id="spacingex">
-            <div class="col-2">
-                <label>tekenaar jarig: </label>
-            </div>
-            <div class="col-4">
-                <input type="date" id="jarigteken" placeholder="jarig" asp-for="TekenaarNaam.geboortedatum"/>
 
             </div>
         </div>
@@ -133,34 +140,29 @@
         <hr/>
         <div class="form-group row" id="spacingex">
             <select name="schrijverr" class="form-select form-select-sm">
-                <option selected value="8">Al bekende schrijvers</option>
-
+                <option selected value="">Al bekende schrijvers</option>
+                <option value="0000"> staat niet in de lijst...</option>
                 @{
-                    if (Model.schrijverList == null)
+                    if (Model.schrijverList != null)
                     {
                         foreach (var schrijver in Model.schrijverList)
                         {
                             <option value="@schrijver.schrijver_id"> @schrijver.schrijver_naam </option>
                         }
                     }
-                    <script>
-                    
-                    </script>
                 }
-                <option value="0000"> staat niet in de lijst...</option>
-                </select>
-            
+            </select>
         </div>
-        
-        <div class="form-group row" id="spacingex">
-            <div class="col-2">
-                <label>schrijver </label>
-            </div>
-            <div class="col-4">
-                <input type="text" id="blz" placeholder="schrijver" asp-for="SchrijverNaam.schrijver_naam"/>
 
-            </div>
-        </div>
+                <div class="form-group row" id="spacingex">
+                    <div class="col-2">
+                        <label>schrijver </label>
+                    </div>
+                    
+                    <div class="col-4">
+                        <input type="text" id="blz" placeholder="schrijver" asp-for="SchrijverNaam.schrijver_naam"/>
+                    </div>
+                </div>
         
         <div class="form-group row" id="spacingex">
             <div class="col-2">
@@ -172,6 +174,21 @@
             </div>
         </div>
         <hr/>
+                <div class="form-group row" id="spacingex">
+                            <select name="reeksr" class="form-select form-select-sm">
+                                <option selected value="">Al bekende reeks</option>
+                                <option value="0000"> staat niet in de lijst...</option>
+                                @{
+                                    if (Model.reeksList != null)
+                                    {
+                                        foreach (var reeks in Model.reeksList)
+                                        {
+                                            <option value="@reeks.reeks_id"> @reeks.reeks_naam </option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </div>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
                 <label>reeksnaam </label>
@@ -181,6 +198,22 @@
     
             </div>
         </div>
+    <hr/>
+    <div class="form-group row" id="spacingex">
+                                <select name="uitgeverr" class="form-select form-select-sm">
+                                    <option selected value="">Al bekende uitgevers</option>
+                                    <option value="0000"> staat niet in de lijst...</option>
+                                    @{
+                                        if (Model.uitgeverList != null)
+                                        {
+                                            foreach (var uitgever in Model.uitgeverList)
+                                            {
+                                                <option value="@uitgever.uitgever_id"> @uitgever.uitgever_naam </option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
         <div class="form-group row" id="spacingex">
             <div class="col-2">
                 <label>uitgevernaam </label>
