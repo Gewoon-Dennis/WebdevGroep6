@@ -96,7 +96,7 @@
                 <label>afbeelding: </label>
             </div>
             <div class="col-4">
-                <input type="file" accept="image/*" id="afb" asp-for="NieuweUitgave.afbeelding"/>
+                <input type="text" id="afb" asp-for="NieuweUitgave.afbeelding"/>
 
             </div>
         </div>
@@ -134,17 +134,13 @@
         <div class="form-group row" id="spacingex">
             <select name="schrijverr" class="form-select form-select-sm">
                 <option selected value="8">Al bekende schrijvers</option>
-
+                <option value="0000"> staat niet in de lijst...</option>
                 @{
                     foreach (var schrijver in Model.schrijverList)
                     {
                         <option value="@schrijver.schrijver_id"> @schrijver.schrijver_naam </option>
                     }
-                    <script>
-                    
-                    </script>
                 }
-                <option value="0000"> staat niet in de lijst...</option>
                 </select>
             
         </div>

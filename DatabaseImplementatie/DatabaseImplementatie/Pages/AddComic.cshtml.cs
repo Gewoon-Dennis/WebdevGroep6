@@ -34,7 +34,7 @@ public class AddComic : PageModel
         NieuweUitgave.uitgave_id = Guid.NewGuid();
         ReeksNaam.reeks_id = Guid.NewGuid();
         UitgeverNaam.uitgever_id = Guid.NewGuid();
-        TekenaarNaam.tekenaar_id = Guid.NewGuid();
+        TekenaarNaam.tekenaar_id = Guid.NewGuid().ToString();
         if (schrijverID == "0000")
         {
             SchrijverNaam.schrijver_id = Guid.NewGuid().ToString();
@@ -51,5 +51,6 @@ public class AddComic : PageModel
         NieuweUitgave.verified = false;
         
         new uitgaveRepository().AddUitgave(NieuweUitgave, ReeksNaam, UitgeverNaam, TekenaarNaam, SchrijverNaam);
+        schrijverList = new artiestRepository().GetSchrijvers();
     }
 }
