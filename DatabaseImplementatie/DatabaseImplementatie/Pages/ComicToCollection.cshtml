@@ -17,14 +17,14 @@
         <label>op een schaal van 1 tot 10 wat is de conditie van je stripboek:</label>
     </div>
     <div class="col-4">
-        <input type="number" asp-for="@Model.Bezit.kwaliteit_boek"/>
+        <input type="number" max="10" required="required" asp-for="@Model.Bezit.kwaliteit_boek"/>
     </div>
     <div class="col-2">
         <label>op een schaal van 1 tot 10 wat vond je van het stripboek:</label>
     </div>
     <div class="col-4">
-        <input type="number" asp-for="@Model.Bezit.kwaliteit_verhaal"/>
+        <input type="number" max="10" required="required" asp-for="@Model.Bezit.kwaliteit_verhaal"/>
     </div>
-    <button type="submit" asp-page-handler="VoegToe">Voeg toe aan collectie</button>
+    <button class="btn btn-dark" type="submit" asp-page-handler="VoegToe">Voeg toe aan collectie</button>
 </form>
 </div>

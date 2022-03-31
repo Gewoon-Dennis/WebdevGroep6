@@ -8,6 +8,7 @@ namespace DatabaseImplementatie.Pages;
 public class Register : PageModel
 {
     [BindProperty] public Gebruiker Nieuwegebruiker { get; set; }
+    [BindProperty] public string Password { get; set; }
     public RedirectToPageResult OnGet()
     {
         
@@ -23,6 +24,7 @@ public class Register : PageModel
     {
         Nieuwegebruiker.gebruiker_id = Guid.NewGuid().ToString();
         Nieuwegebruiker.gebruikermail = Nieuwegebruiker.gebruikermail.ToLower();
+        Nieuwegebruiker.wachtwoord = Password;
         Nieuwegebruiker.rol = "Verzamelaar";
         var addCafeUser = new gebruikerRepository().AddNewUser(Nieuwegebruiker);
         return new RedirectToPageResult("Login");
